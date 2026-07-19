@@ -134,7 +134,8 @@
     <li>خصم العائلة في شيت Parents</li>
     <li>زر «تحديث السعر النهائي» — كيف يُحسب Final_Price</li>
     <li>شيت Payments — تسجيل الدفعات المالية</li>
-    <li>رصيد ولي الأمر في شيت Financial_Report</li>
+    <li>شيت Cur_Change — أسعار تحويل العملات</li>
+    <li>زر «توليد التقرير المالي» — شيت Financial_Report</li>
     <li>ملاحظات وتنبيهات عامة</li>
   </ol>
 
@@ -147,7 +148,8 @@
     <div class="flow-row flow-manual"><div class="flow-num">3</div><div><div class="flow-title">تسجيل نسبة خصم العائلة (اختياري)</div><div class="flow-sub">عمود Discount_Percent في شيت Parents</div></div></div>
     <div class="flow-row flow-btn"><div class="flow-num">4</div><div><div class="flow-title">الضغط على زر «تحديث السعر النهائي»</div><div class="flow-sub">يحسب Final_Price لكل حصة جديدة في شيت completed</div></div></div>
     <div class="flow-row flow-manual"><div class="flow-num">5</div><div><div class="flow-title">تسجيل كل دفعة مالية تصل من ولي الأمر</div><div class="flow-sub">شيت Payments</div></div></div>
-    <div class="flow-row flow-manual"><div class="flow-num">6</div><div><div class="flow-title">مراجعة رصيد العائلة</div><div class="flow-sub">شيت Financial_Report</div></div></div>
+    <div class="flow-row flow-manual"><div class="flow-num">6</div><div><div class="flow-title">تسجيل أسعار تحويل العملات (عند الحاجة)</div><div class="flow-sub">شيت Cur_Change</div></div></div>
+    <div class="flow-row flow-btn"><div class="flow-num">7</div><div><div class="flow-title">الضغط على زر «توليد التقرير المالي»</div><div class="flow-sub">يبني شيت Financial_Report من الصفر لكل عائلة</div></div></div>
   </div>
   <p class="flow-note">خطوة تنفيذ برز داخل الشيت = إدخال بيانات (يدوي)</p>
 
@@ -256,35 +258,66 @@
       <tr><td>comment</td><td>أي ملاحظة إضافية على الدفعة</td></tr>
     </tbody>
   </table></div>
-  <div class="callout callout-info"><strong>ملاحظة:</strong> تسجيل دفعة هنا لا يغيّر Final_Price لأي حصة — الدفعات وتسعير الحصص عمليتان منفصلتان، تلتقيان فقط في تقرير الرصيد بشيت Financial_Report.</div>
+  <div class="callout callout-info"><strong>ملاحظة:</strong> تسجيل دفعة هنا لا يغيّر Final_Price لأي حصة — الدفعات وتسعير الحصص عمليتان منفصلتان، تلتقيان فقط في تقرير Financial_Report.</div>
 
-  <h2 class="section-break">رصيد ولي الأمر في شيت Financial_Report</h2>
-  <p>هذا الشيت هو تقرير مُجمَّع (وليس شيت Parents) يقارن قيمة الحصص المكتملة بكل عائلة مقابل ما دفعته فعليًا في Payments، ويُقسَّم إلى أقسام حسب العملة (مثال: قسم «العملة: CAD»، وآخر «العملة: US»...)، مع سطر «المجموع» في نهاية كل قسم.</p>
+  <h2 class="section-break">شيت Cur_Change — أسعار تحويل العملات</h2>
+  <p>مطلوب فقط إذا كانت بعض العائلات تدفع بعملة غير الدولار الكندي (CAD/CAN). يحتوي على عمودين:</p>
   <div class="table-wrap"><table>
     <thead><tr><th>العمود</th><th>الوصف</th></tr></thead>
     <tbody>
-      <tr><td>Parent_ID / Parent_Name</td><td>ولي الأمر</td></tr>
-      <tr><td>Children_IDs</td><td>أبناء هذه العائلة المشمولون في التقرير</td></tr>
-      <tr><td>Total_Completed_Lessons</td><td>عدد الحصص المكتملة لكل أبناء العائلة</td></tr>
-      <tr><td>Total_Lessons_Value</td><td>مجموع Final_Price لكل تلك الحصص</td></tr>
-      <tr><td>Total_Payments</td><td>مجموع كل صفوف Payments الخاصة بهذه العائلة</td></tr>
-      <tr><td>Last_Payment_Date</td><td>تاريخ آخر دفعة مسجّلة</td></tr>
-      <tr><td>Currency</td><td>عملة هذا القسم من التقرير</td></tr>
-      <tr><td>Discount_Percent</td><td>نسخة معروضة من نسبة خصم العائلة (المصدر الفعلي لها هو شيت Parents)</td></tr>
-      <tr><td>Balance</td><td>Total_Payments − Total_Lessons_Value: رقم موجب يعني أن العائلة دفعت أكثر من قيمة حصصها (رصيد لصالحها)، ورقم سالب يعني أن عليها مبلغ مستحق</td></tr>
-      <tr><td>Status</td><td>يوضّح حالة الرصيد نصيًا: دائن (رصيد لصالح العائلة) / مدين (عليها مبلغ) / متوازن (Balance = صفر)</td></tr>
-      <tr><td>All_Payment_Dates / All_Payment_Amounts</td><td>سجل مجمّع لكل تواريخ ومبالغ الدفعات، للمراجعة السريعة دون فتح شيت Payments</td></tr>
-      <tr><td>Notes</td><td>ملاحظات تلقائية عن اكتمال البيانات (مثال: "لا توجد حصص مكتملة بسعر صالح ضمن الفترة")</td></tr>
+      <tr><td>رمز العملة</td><td>Currency (أو العملة / عملة) — مثال: USD</td></tr>
+      <tr><td>سعر التحويل</td><td>Rate (أو To_CAD / Conversion_Rate / سعر التحويل) — كم يساوي 1 من هذه العملة بالدولار الكندي</td></tr>
     </tbody>
   </table></div>
-  <div class="callout callout-info"><strong>ملاحظة:</strong> هذا الشيت تقرير عرض فقط — المصدر الحقيقي للأرقام يبقى دائمًا completed (للحصص) و Payments (للمدفوعات) و Parents (لنسبة الخصم). راجع تلك الشيتات الأصلية عند وجود أي تعارض في الرصيد.</div>
+  <div class="callout callout-danger"><strong>مهم:</strong> أي عملة غير موجودة في هذا الشيت (وليست CAD أو CAN) يتعامل معها النظام تلقائيًا وكأن سعر تحويلها 1، أي بلا أي تحويل فعلي. تأكد من إضافة كل عملة تُستخدم فعليًا في شيت Payments هنا، وإلا ستكون أرقام Total_Payments و Balance في Financial_Report غير دقيقة لتلك العائلة.</div>
+
+  <h2 class="section-break">زر «توليد التقرير المالي» — شيت Financial_Report</h2>
+  <div class="btn-tag">الزر: «توليد التقرير المالي»</div>
+  <p>هذا الزر <strong>يعيد بناء شيت Financial_Report بالكامل من الصفر</strong> في كل مرة يُشغَّل فيها (يمسح محتواه القديم بالكامل قبل الكتابة)، اعتمادًا على أربعة شيتات: Parents، Students، Payments، وcompleted (عمود Final_Price)، بالإضافة إلى Cur_Change للتحويل بين العملات.</p>
+  <p>لكل ولي أمر (حتى لو لم يكن مسجّلاً في شيت Parents، طالما ظهر في Students أو Payments أو completed) يبني صفًا واحدًا بهذه الأعمدة:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>العمود</th><th>الوصف</th></tr></thead>
+    <tbody>
+      <tr><td>Parent_ID / Parent_Name</td><td>ولي الأمر، من شيت Parents</td></tr>
+      <tr><td>Children_IDs / Children_Names</td><td>كل أبناء هذا الولي المسجّلين في شيت Students</td></tr>
+      <tr><td>Total_Completed_Lessons</td><td>عدد صفوف completed لأبناء هذه العائلة التي لديها Final_Price رقمي صالح فقط</td></tr>
+      <tr><td>Total_Lessons_Value</td><td>مجموع تلك القيم من Final_Price كما هي، بدون أي تحويل عملة</td></tr>
+      <tr><td>Total_Payments</td><td>مجموع كل دفعات Payments لهذه العائلة بعد تحويلها إلى الدولار الكندي عبر Cur_Change</td></tr>
+      <tr><td>Last_Payment_Date</td><td>تاريخ آخر دفعة (الأحدث زمنيًا)</td></tr>
+      <tr><td>Currency</td><td>عملة الدفعات لهذه العائلة؛ إن استخدمت أكثر من عملة، يُعرض آخر عملة ظهرت في دفعاتها</td></tr>
+      <tr><td>Discount_Percent</td><td>نسخة معروضة من نسبة الخصم — مصدرها الحقيقي شيت Parents</td></tr>
+      <tr><td>Balance</td><td>Total_Payments − Total_Lessons_Value (بعد التحويل للكندي)</td></tr>
+      <tr><td>Status</td><td>دائن إذا Balance أكبر من 0.5 / مدين إذا أقل من ‎-0.5‎ / متوازن فيما عدا ذلك</td></tr>
+      <tr><td>Comment</td><td>تجميع Financial_Note لكل أبناء العائلة من شيت Students (ملاحظة مالية حرة لكل طالب)</td></tr>
+      <tr><td>All_Payment_Dates / All_Payment_Amounts</td><td>كل تواريخ الدفعات ومبالغها بعد التحويل للكندي، مفصولة بفواصل، مرتبة زمنيًا</td></tr>
+      <tr><td>Notes</td><td>ملاحظات تلقائية بالإنجليزية عن أي نقص في البيانات (اُنظر أدناه)</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>رسائل Notes التلقائية المحتملة</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>الرسالة</th><th>السبب</th></tr></thead>
+    <tbody>
+      <tr><td>Parent record missing in Parents sheet</td><td>ظهر Parent_ID في Students أو Payments أو completed لكنه غير موجود في شيت Parents</td></tr>
+      <tr><td>No students found for this parent</td><td>لا يوجد أي طالب مرتبط بهذا الـ Parent_ID في شيت Students</td></tr>
+      <tr><td>No completed lessons with valid Final_Price</td><td>لا توجد لهذه العائلة أي حصة مكتملة بسعر رقمي صالح إطلاقًا</td></tr>
+      <tr><td>N completed rows have invalid Final_Price</td><td>كل حصص هذه العائلة إما فارغة السعر أو ERROR (تظهر فقط إذا لم يكن لديها ولا حصة واحدة مسعّرة بنجاح)</td></tr>
+      <tr><td>No payments recorded</td><td>لا توجد أي دفعة مسجّلة لهذه العائلة في Payments</td></tr>
+      <tr><td>Multiple currencies in payments</td><td>دفعت هذه العائلة بأكثر من عملة واحدة</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout callout-danger"><strong>تنبيه دقيق:</strong> إذا كان لدى العائلة بعض الحصص مسعّرة بنجاح وبعضها الآخر فارغ أو ERROR، فلن يظهر أي تنبيه في Notes عن الحصص غير المسعّرة — يُحتسب فقط ما هو رقمي صالح في Total_Completed_Lessons و Total_Lessons_Value، وتُستبعد البقية بصمت. راجع شيت completed مباشرة للتأكد أن كل حصص العائلة مسعّرة قبل الاعتماد على هذا التقرير.</div>
+  <div class="callout callout-danger"><strong>مهم أيضًا:</strong> Total_Lessons_Value يؤخذ من Final_Price كما هو دون أي تحويل عملة، بينما Total_Payments و Balance و All_Payment_Amounts تُحوَّل دائمًا إلى الدولار الكندي. لهذا يفترض النظام أن أسعار Final_Price مسجّلة أصلًا بما يعادل الدولار الكندي — تأكد من هذا الاتساق حتى لا يظهر رصيد غير دقيق للعائلات التي تُسعَّر أو تدفع بعملة أخرى.</div>
+  <div class="callout callout-info"><strong>ملاحظة:</strong> لا ينشئ هذا الزر شيت سجل أخطاء منفصل مثل Price_Note — كل الملاحظات تُكتب مباشرة داخل عمود Notes بالتقرير نفسه. الشيت يُلوَّن تلقائيًا: عمود Status بالأخضر/الأحمر/الأصفر حسب الحالة، وعمود Children_IDs بالأزرق الفاتح إن كان لدى العائلة أكثر من طالب.</div>
 
   <h2>ملاحظات وتنبيهات عامة</h2>
   <ul class="steps">
     <li>سعر كل مادة في Subjects بالساعة وليس بالحصة، لذا فإن أي خطأ في Duration_Hours (الجزء الأول) ينعكس مباشرة على Final_Price.</li>
     <li>افحص شيت Price_Note بعد كل تشغيل لزر «تحديث السعر النهائي» وصحّح أي صف بحالة ERROR أو WARNING.</li>
     <li>لا تترك عرضين متطابقين (نفس Parent_ID + Student_ID + Subject + Offer_Mode) — عطّل القديم بدل تكراره.</li>
-    <li>تسجيل الدفعات في Payments مستقل عن التسعير في completed؛ الرابط بينهما فقط عبر تقرير الرصيد في Financial_Report.</li>
+    <li>تسجيل الدفعات في Payments مستقل عن التسعير في completed؛ الرابط بينهما فقط عبر تقرير Financial_Report.</li>
+    <li>شيت Financial_Report يُعاد بناؤه بالكامل من الصفر في كل تشغيل — أي تعديل يدوي عليه مباشرة سيُفقَد عند التشغيل التالي.</li>
+    <li>أضف كل عملة تُستخدم فعليًا في Payments إلى شيت Cur_Change، وإلا فسيُعامَل سعر تحويلها كـ 1 بلا تنبيه.</li>
   </ul>
 
   <footer>دليل استخدام نظام إدارة الحصص — الجزء الثاني</footer>
