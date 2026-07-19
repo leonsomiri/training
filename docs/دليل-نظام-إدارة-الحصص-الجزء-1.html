@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>دليل استخدام نظام إدارة الحصص — الجزء الأول</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  body{font-family:'Cairo',Tahoma,Arial,sans-serif;margin:0;background:#f2f4f8}
+  .page{max-width:900px;margin:0 auto;background:#fff;padding:0.9in 0.9in 0.6in}
+  @media print{
+    .page{break-after:page}
+  }
+  footer.doc-footer{direction:rtl;font-family:'Cairo',Tahoma,Arial,sans-serif;font-size:11px;color:#8b93a6;text-align:center;width:100%;border-top:1px solid #e5e8ef;padding-top:8px;margin-top:32px}
+</style>
+</head>
+<body>
+<div class="page">
+<div dir="rtl" lang="ar" style="direction:rtl;text-align:right;font-family:'Cairo',Tahoma,Arial,sans-serif;color:#20263a;line-height:1.75">
+
+  <!-- Title -->
+  <div style="text-align:center;padding:36px 0 28px;border-bottom:3px solid #0e7c86;margin-bottom:32px">
+    <div style="display:inline-block;background:#0e7c86;color:#fff;font-size:13px;font-weight:700;letter-spacing:0.5px;padding:6px 18px;border-radius:999px;margin-bottom:18px">الجزء الأول</div>
+    <h1 style="font-size:34px;font-weight:800;color:#0f2540;margin:0 0 10px">دليل استخدام نظام إدارة الحصص</h1>
+    <p style="font-size:17px;font-weight:600;color:#3a4256;margin:0">دورة العمل الأساسية على شيتات الجدولة</p>
+    <p style="font-size:14.5px;color:#5c6478;max-width:520px;margin:14px auto 0;text-wrap:pretty">من تسجيل الطالب والمدرس، إلى توليد الجدول تلقائيًا، ثم نقل الحصص بعد انعقادها، وحساب مدتها الفعلية.</p>
+  </div>
+
+  <!-- TOC -->
+  <h2 style="font-size:20px;font-weight:800;color:#0f2540;margin:0 0 14px">محتويات هذا الدليل</h2>
+  <ol style="margin:0 0 30px;padding-inline-start:22px;font-size:14.5px;color:#2c3348">
+    <li style="margin-bottom:6px">نظرة عامة على دورة العمل</li>
+    <li style="margin-bottom:6px">الخطوة 1 — تسجيل بيانات الطالب</li>
+    <li style="margin-bottom:6px">الخطوة 2 — تسجيل مواعيد الطالب المتاحة</li>
+    <li style="margin-bottom:6px">الخطوة 3 — تسجيل بيانات المدرس</li>
+    <li style="margin-bottom:6px">الخطوة 4 — تسجيل مواعيد المدرس المتاحة</li>
+    <li style="margin-bottom:6px">الخطوة 5 — توليد جدول الحصص (زر «اختيار نوع الجدولة»)</li>
+    <li style="margin-bottom:6px">الخطوة 6 — تحديث حالة الحصة بعد انعقادها</li>
+    <li style="margin-bottom:6px">الخطوة 7 — نقل الحصص حسب الحالة (زر)</li>
+    <li style="margin-bottom:6px">الخطوة 8 — حساب مدة الحصة المكتملة (زر)</li>
+    <li>ملاحظات وتنبيهات عامة</li>
+  </ol>
+
+  <!-- Overview -->
+  <h2 style="font-size:20px;font-weight:800;color:#0f2540;margin:0 0 12px;padding-top:8px">نظرة عامة على دورة العمل</h2>
+  <p style="font-size:14.5px;color:#2c3348;margin:0 0 16px">هذا الدليل يشرح <strong>دورة العمل الأساسية</strong> لنظام الجدولة، بترتيب الخطوات كما تحدث فعليًا على أرض الواقع: من تسجيل الطالب والمدرس وأوقاتهم، إلى توليد الجدول تلقائيًا، ثم متابعة الحصص بعد انعقادها.</p>
+  <div style="display:flex;gap:14px;margin-bottom:28px">
+    <div style="flex:1;display:flex;align-items:center;gap:10px;background:#fff8e1;border:1px solid #f0d778;border-radius:10px;padding:12px 16px">
+      <span style="width:14px;height:14px;border-radius:4px;background:#f5c344;flex-shrink:0"></span>
+      <span style="font-size:13.5px;color:#5a4a12">خطوة تتم بالضغط على <strong>زر</strong> داخل الشيت</span>
+    </div>
+    <div style="flex:1;display:flex;align-items:center;gap:10px;background:#eaf2ff;border:1px solid #b9d2f5;border-radius:10px;padding:12px 16px">
+      <span style="width:14px;height:14px;border-radius:4px;background:#3f7ee8;flex-shrink:0"></span>
+      <span style="font-size:13.5px;color:#173a66">خطوة <strong>إدخال بيانات يدوي</strong></span>
+    </div>
+  </div>
+
+  <!-- Workflow steps -->
+  <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:8px">
+
+    <div style="display:flex;align-items:center;gap:14px;background:#eaf2ff;border:1px solid #b9d2f5;border-radius:10px;padding:14px 18px">
+      <div style="width:30px;height:30px;border-radius:50%;background:#3f7ee8;color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0">1</div>
+      <div style="flex:1"><div style="font-weight:700;font-size:14.5px;color:#173a66">تسجيل بيانات الطالب</div><div style="font-size:12.5px;color:#3a577e">شيت Students</div></div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:14px;background:#eaf2ff;border:1px solid #b9d2f5;border-radius:10px;padding:14px 18px">
+      <div style="width:30px;height:30px;border-radius:50%;background:#3f7ee8;color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0">2</div>
+      <div style="flex:1"><div style="font-weight:700;font-size:14.5px;color:#173a66">تسجيل مواعيد الطالب المتاحة</div><div style="font-size:12.5px;color:#3a577e">شيت Student_Availability</div></div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:14px;background:#eaf2ff;border:1px solid #b9d2f5;border-radius:10px;padding:14px 18px">
+      <div style="width:30px;height:30px;border-radius:50%;background:#3f7ee8;color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0">3</div>
+      <div style="flex:1"><div style="font-weight:700;font-size:14.5px;color:#173a66">تسجيل بيانات المدرس</div><div style="font-size:12.5px;color:#3a577e">شيت Teachers</div></div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:14px;background:#eaf2ff;border:1px solid #b9d2f5;border-radius:10px;padding:14px 18px">
+      <div style="width:30px;height:30px;border-radius:50%;background:#3f7ee8;color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0">4</div>
+      <div style="flex:1"><div style="font-weight:700;font-size:14.5px;color:#173a66">تسجيل مواعيد المدرس المتاحة</div><div style="font-size:12.5px;color:#3a577e">شيت Teacher_Availability</div></div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:14px;background:#fff8e1;border:1px solid #f0d778;border-radius:10px;padding:14px 18px">
+      <div style="width:30px;height:30px;border-radius:50%;background:#f5c344;color:#4a3a06;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0">5</div>
+      <div style="flex:1"><div style="font-weight:700;font-size:14.5px;color:#5a4a12">الضغط على زر «اختيار نوع الجدولة»</div><div style="font-size:12.5px;color:#7a6420">النظام يُولّد الحصص تلقائيًا داخل شيت Lessons_Schedule</div></div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:14px;background:#eaf2ff;border:1px solid #b9d2f5;border-radius:10px;padding:14px 18px">
+      <div style="width:30px;height:30px;border-radius:50%;background:#3f7ee8;color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0">6</div>
+      <div style="flex:1"><div style="font-weight:700;font-size:14.5px;color:#173a66">بعد انعقاد الحصة فعليًا</div><div style="font-size:12.5px;color:#3a577e">تحديث عمود Status يدويًا في Lessons_Schedule</div></div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:14px;background:#fff8e1;border:1px solid #f0d778;border-radius:10px;padding:14px 18px">
+      <div style="width:30px;height:30px;border-radius:50%;background:#f5c344;color:#4a3a06;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0">7</div>
+      <div style="flex:1"><div style="font-weight:700;font-size:14.5px;color:#5a4a12">الضغط على زر «نقل الحصص حسب الحالة»</div><div style="font-size:12.5px;color:#7a6420">تُنقل الحصص تلقائيًا إلى شيت completed أو شيت cancelled</div></div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:14px;background:#fff8e1;border:1px solid #f0d778;border-radius:10px;padding:14px 18px">
+      <div style="width:30px;height:30px;border-radius:50%;background:#f5c344;color:#4a3a06;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0">8</div>
+      <div style="flex:1"><div style="font-weight:700;font-size:14.5px;color:#5a4a12">الضغط على زر «حساب مدة الحصص»</div><div style="font-size:12.5px;color:#7a6420">يُحسب عمود Duration_Hours لكل صف في شيت completed</div></div>
+    </div>
+
+  </div>
+  <p style="font-size:12.5px;color:#8b93a6;margin:10px 0 0">خطوة تنفيذ برز داخل الشيت = إدخال بيانات (يدوي)</p>
+
+  <!-- Step 1 -->
+  <h2 style="font-size:20px;font-weight:800;color:#0f2540;margin:24px 0 6px;padding-top:8px">الخطوة 1 — تسجيل بيانات الطالب</h2>
+  <p style="font-size:13px;color:#0e7c86;font-weight:700;margin:0 0 12px">شيت Students</p>
+  <p style="font-size:14px;color:#2c3348;margin:0 0 16px">هذا هو أول شيت يتم تعبئته عند انضمام أي طالب جديد للنظام. كل صف يمثل طالبًا واحدًا.</p>
+  <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:22px">
+    <thead><tr><th style="text-align:right;background:#0f2540;color:#fff;padding:9px 12px;border:1px solid #0f2540;width:220px">العمود</th><th style="text-align:right;background:#0f2540;color:#fff;padding:9px 12px;border:1px solid #0f2540">الوصف</th></tr></thead>
+    <tbody>
+      <tr><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">Student_ID</td><td style="padding:9px 12px;border:1px solid #dde1ea">رقم تعريف فريد للطالب (لا يتكرر أبدًا لطالب آخر)</td></tr>
+      <tr style="background:#f7f8fb"><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">Student_Name</td><td style="padding:9px 12px;border:1px solid #dde1ea">اسم الطالب</td></tr>
+      <tr><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">Parent_ID / Parent_Name / Parent_Phone</td><td style="padding:9px 12px;border:1px solid #dde1ea">بيانات ولي الأمر المرتبط بالطالب</td></tr>
+      <tr style="background:#f7f8fb"><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">Stage</td><td style="padding:9px 12px;border:1px solid #dde1ea">الصف الدراسي (1 إلى 12)</td></tr>
+      <tr><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">Country / City</td><td style="padding:9px 12px;border:1px solid #dde1ea">الدولة والمدينة</td></tr>
+      <tr style="background:#f7f8fb"><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">Timezone</td><td style="padding:9px 12px;border:1px solid #dde1ea">المنطقة الزمنية للطالب (مهم جدًا للجدولة التلقائية)</td></tr>
+      <tr><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">Max_Lessons_Day / Week / Month</td><td style="padding:9px 12px;border:1px solid #dde1ea">الحد الأقصى لعدد الحصص المسموح بجدولتها للطالب يوميًا / أسبوعيًا / شهريًا</td></tr>
+      <tr style="background:#f7f8fb"><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">Subject1…5 / Lesson_Duration1…5</td><td style="padding:9px 12px;border:1px solid #dde1ea">كل المواد التي يدرسها الطالب (حتى 5 مواد)، ومدة كل حصة بالساعات لكل مادة</td></tr>
+      <tr><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">Status</td><td style="padding:9px 12px;border:1px solid #dde1ea">حالة الطالب الحالية — أهم القيم: Active (نشط ويُجدوَل له تلقائيًا)، Drop / Suspended / Trail (لا يُجدوَل له)</td></tr>
+      <tr style="background:#f7f8fb"><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">Date_Of_Active / Date_Of_Drop</td><td style="padding:9px 12px;border:1px solid #dde1ea">تاريخ التفعيل وتاريخ الانسحاب (إن وجد)</td></tr>
+      <tr><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">comment</td><td style="padding:9px 12px;border:1px solid #dde1ea">أي ملاحظة إدارية حرة عن الطالب</td></tr>
+      <tr style="background:#f7f8fb"><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">currency</td><td style="padding:9px 12px;border:1px solid #dde1ea">عملة الطالب المالية</td></tr>
+      <tr><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">Email</td><td style="padding:9px 12px;border:1px solid #dde1ea">البريد الإلكتروني (إن وجد)</td></tr>
+    </tbody>
+  </table>
+  <div style="background:#fdeceb;border:1px solid #f2c2be;border-radius:10px;padding:14px 18px;font-size:13.5px;color:#7a2620;margin-bottom:8px"><strong>مهم:</strong> النظام لا يُجدوِل أي حصص لطالب طالما حالته (Status) ليست Active. تأكد من تحديث هذا العمود فور تغيّر حالة الطالب.</div>
+
+  <!-- Step 2 -->
+  <h2 style="font-size:20px;font-weight:800;color:#0f2540;margin:24px 0 6px">الخطوة 2 — تسجيل مواعيد الطالب المتاحة</h2>
+  <p style="font-size:13px;color:#0e7c86;font-weight:700;margin:0 0 12px">شيت Student_Availability</p>
+  <p style="font-size:14px;color:#2c3348;margin:0 0 16px">بعد تسجيل الطالب، يتم تسجيل الأوقات التي يفضّل أو يستطيع أخذ الحصص فيها، بتوقيته المحلي هو.</p>
+  <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px">
+    <thead><tr><th style="text-align:right;background:#0f2540;color:#fff;padding:9px 12px;border:1px solid #0f2540;width:220px">العمود</th><th style="text-align:right;background:#0f2540;color:#fff;padding:9px 12px;border:1px solid #0f2540">الوصف</th></tr></thead>
+    <tbody>
+      <tr><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">Student_ID / Student_Name</td><td style="padding:9px 12px;border:1px solid #dde1ea">ربط الصف بالطالب</td></tr>
+      <tr style="background:#f7f8fb"><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">Day</td><td style="padding:9px 12px;border:1px solid #dde1ea">اليوم (مثال: MONDAY)</td></tr>
+      <tr><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">Preferred_Hours</td><td style="padding:9px 12px;border:1px solid #dde1ea">الأوقات المتاحة لهذا اليوم (يمكن كتابة أكثر من وقت مفصول بفاصلة)، بتوقيت الطالب المحلي</td></tr>
+      <tr style="background:#f7f8fb"><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">Pref_Teacher</td><td style="padding:9px 12px;border:1px solid #dde1ea">اختياري — إذا كان الطالب يفضّل مدرسًا معينًا في هذا اليوم تحديدًا</td></tr>
+      <tr><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">Teacher Name / Note</td><td style="padding:9px 12px;border:1px solid #dde1ea">حقول توضيحية إضافية</td></tr>
+      <tr style="background:#f7f8fb"><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">Canda_Time / World_Time</td><td style="padding:9px 12px;border:1px solid #dde1ea">مرجع مساعد لعرض التوقيت بصيغ مختلفة</td></tr>
+    </tbody>
+  </table>
+  <div style="background:#f3f6fb;border:1px solid #d7dfec;border-radius:10px;padding:14px 18px;font-size:13.5px;color:#2c3348;margin-bottom:8px"><strong>ملاحظة:</strong> يمكن تسجيل أكثر من صف لنفس الطالب لتغطية أيام متعددة في الأسبوع — كل صف يمثّل يومًا واحدًا فقط.</div>
+
+  <!-- Step 3 -->
+  <h2 style="font-size:20px;font-weight:800;color:#0f2540;margin:24px 0 6px;padding-top:8px">الخطوة 3 — تسجيل بيانات المدرس</h2>
+  <p style="font-size:13px;color:#0e7c86;font-weight:700;margin:0 0 12px">شيت Teachers</p>
+  <p style="font-size:14px;color:#2c3348;margin:0 0 16px">نفس فكرة شيت الطلاب، ولكن لكل مدرس.</p>
+  <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:22px">
+    <thead><tr><th style="text-align:right;background:#0f2540;color:#fff;padding:9px 12px;border:1px solid #0f2540;width:220px">العمود</th><th style="text-align:right;background:#0f2540;color:#fff;padding:9px 12px;border:1px solid #0f2540">الوصف</th></tr></thead>
+    <tbody>
+      <tr><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">Teacher_ID</td><td style="padding:9px 12px;border:1px solid #dde1ea">رقم تعريف فريد للمدرس</td></tr>
+      <tr style="background:#f7f8fb"><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">Teacher_Name</td><td style="padding:9px 12px;border:1px solid #dde1ea">اسم المدرس</td></tr>
+      <tr><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">Country / City</td><td style="padding:9px 12px;border:1px solid #dde1ea">الدولة والمدينة</td></tr>
+      <tr style="background:#f7f8fb"><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">Timezone</td><td style="padding:9px 12px;border:1px solid #dde1ea">المنطقة الزمنية للمدرس (ضروري للمقارنة مع توقيت الطالب)</td></tr>
+      <tr><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">Teacher_Link</td><td style="padding:9px 12px;border:1px solid #dde1ea">رابط اجتماع المدرس الثابت (Meet/Zoom) — يُنسخ تلقائيًا لكل حصة يتم جدولتها له</td></tr>
+      <tr style="background:#f7f8fb"><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">Subject1 / Subject2 / Subject3</td><td style="padding:9px 12px;border:1px solid #dde1ea">المواد التي يُدرّسها هذا المدرس</td></tr>
+      <tr><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">NOTE</td><td style="padding:9px 12px;border:1px solid #dde1ea">ملاحظات إدارية حرة</td></tr>
+      <tr style="background:#f7f8fb"><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">Email</td><td style="padding:9px 12px;border:1px solid #dde1ea">البريد الإلكتروني</td></tr>
+    </tbody>
+  </table>
+
+  <!-- Step 4 -->
+  <h2 style="font-size:20px;font-weight:800;color:#0f2540;margin:0 0 6px">الخطوة 4 — تسجيل مواعيد المدرس المتاحة</h2>
+  <p style="font-size:13px;color:#0e7c86;font-weight:700;margin:0 0 12px">شيت Teacher_Availability</p>
+  <p style="font-size:14px;color:#2c3348;margin:0 0 16px">يحدد فيه وقت توفّر كل مدرس بتوقيته المحلي هو (وليس توقيت الطالب).</p>
+  <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px">
+    <thead><tr><th style="text-align:right;background:#0f2540;color:#fff;padding:9px 12px;border:1px solid #0f2540;width:220px">العمود</th><th style="text-align:right;background:#0f2540;color:#fff;padding:9px 12px;border:1px solid #0f2540">الوصف</th></tr></thead>
+    <tbody>
+      <tr><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">Teacher_ID / Teacher_Name</td><td style="padding:9px 12px;border:1px solid #dde1ea">ربط الصف بالمدرس</td></tr>
+      <tr style="background:#f7f8fb"><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">Day</td><td style="padding:9px 12px;border:1px solid #dde1ea">اليوم</td></tr>
+      <tr><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">Start_Time / End_Time</td><td style="padding:9px 12px;border:1px solid #dde1ea">بداية ونهاية فترة التوفر بتوقيت المدرس المحلي</td></tr>
+      <tr style="background:#f7f8fb"><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">Is_Available</td><td style="padding:9px 12px;border:1px solid #dde1ea">يجب أن تكون القيمة Yes (أو نعم أو 1 أو true) حتى يعتبرها النظام فترة متاحة فعليًا</td></tr>
+      <tr><td style="padding:9px 12px;border:1px solid #dde1ea;font-weight:700">Note</td><td style="padding:9px 12px;border:1px solid #dde1ea">ملاحظة حرة</td></tr>
+    </tbody>
+  </table>
+  <div style="background:#fdeceb;border:1px solid #f2c2be;border-radius:10px;padding:14px 18px;font-size:13.5px;color:#7a2620;margin-bottom:8px"><strong>مهم:</strong> إذا كانت خانة Is_Available فارغة أو أي قيمة غير القيم المذكورة أعلاه، فسيتجاهل النظام هذه الفترة تمامًا ولن يجدوِل فيها أي حصة.</div>
+
+  <!-- Step 5 -->
+  <h2 style="font-size:20px;font-weight:800;color:#0f2540;margin:24px 0 6px;padding-top:8px">الخطوة 5 — توليد جدول الحصص</h2>
+  <p style="font-size:14px;color:#2c3348;margin:0 0 14px">بعد اكتمال البيانات في الشيتات الأربعة السابقة، تأتي خطوة توليد الجدول تلقائيًا.</p>
+  <div style="background:#fff8e1;border:1px solid #f0d778;border-radius:10px;padding:14px 18px;font-size:14px;color:#5a4a12;font-weight:700;margin-bottom:16px">الزر: «اختيار نوع الجدولة»</div>
+  <p style="font-size:14px;color:#2c3348;margin:0 0 8px">عند الضغط عليه تظهر نافذة بها 3 خيارات:</p>
+  <ul style="font-size:14px;color:#2c3348;margin:0 0 18px;padding-inline-start:22px">
+    <li style="margin-bottom:6px"><strong>Yes</strong> — توليد جدول كامل لمدة 30 يومًا قادمة من تاريخ اليوم.</li>
+    <li style="margin-bottom:6px"><strong>No</strong> — توليد جدول لنطاق تاريخ محدد تدخله بنفسك (تاريخ بداية وتاريخ نهاية).</li>
+    <li><strong>Cancel</strong> — إلغاء العملية دون أي تعديل.</li>
+  </ul>
+  <h3 style="font-size:15.5px;font-weight:800;color:#0f2540;margin:0 0 8px">ماذا يفعل النظام تلقائيًا؟</h3>
+  <ul style="font-size:14px;color:#2c3348;margin:0 0 18px;padding-inline-start:22px">
+    <li style="margin-bottom:6px">يقرأ أوقات كل طالب المتاحة (بتوقيته)، ويحوّلها إلى توقيت كل مدرس مرشّح لمقارنتها بأوقات توفره.</li>
+    <li style="margin-bottom:6px">يتجنب أي تعارض في المواعيد سواء للطالب أو للمدرس.</li>
+    <li style="margin-bottom:6px">يحترم الحدود اليومية والأسبوعية والشهرية المسجّلة في شيت الطلاب.</li>
+    <li>يضيف الحصص الجديدة فقط داخل شيت Lessons_Schedule، دون حذف أو تكرار الحصص الموجودة مسبقًا.</li>
+  </ul>
+  <h3 style="font-size:15.5px;font-weight:800;color:#0f2540;margin:0 0 8px">تقرير النتيجة</h3>
+  <p style="font-size:14px;color:#2c3348;margin:0 0 22px">بعد انتهاء التوليد تظهر رسالة تلخّص: عدد الطلاب الكلي، عدد الطلاب الذين حصلوا على حصص جديدة، عدد الحصص الجديدة المولّدة، وتوزيعها حسب المادة.</p>
+
+  <h3 style="font-size:15.5px;font-weight:800;color:#0f2540;margin:0 0 10px;padding-top:8px">ألوان تنبيه داخل شيت Lessons_Schedule</h3>
+  <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:22px">
+    <thead><tr><th style="text-align:right;background:#0f2540;color:#fff;padding:9px 12px;border:1px solid #0f2540;width:150px">اللون</th><th style="text-align:right;background:#0f2540;color:#fff;padding:9px 12px;border:1px solid #0f2540">المعنى</th></tr></thead>
+    <tbody>
+      <tr><td style="padding:9px 12px;border:1px solid #dde1ea"><span style="display:inline-flex;align-items:center;gap:8px"><span style="width:12px;height:12px;border-radius:3px;background:#e05a4e;display:inline-block"></span>أحمر</span></td><td style="padding:9px 12px;border:1px solid #dde1ea">على عمود وقت بداية المدرس — الحصة جُدولت خارج وقت توفر المدرس الرسمي وتحتاج مراجعة يدوية</td></tr>
+      <tr style="background:#f7f8fb"><td style="padding:9px 12px;border:1px solid #dde1ea"><span style="display:inline-flex;align-items:center;gap:8px"><span style="width:12px;height:12px;border-radius:3px;background:#4caf7d;display:inline-block"></span>أخضر</span></td><td style="padding:9px 12px;border:1px solid #dde1ea">على عمود وقت نهاية الطالب — الحصة تمتد لليوم التالي بتوقيت الطالب (تعبر منتصف الليل)</td></tr>
+      <tr><td style="padding:9px 12px;border:1px solid #dde1ea"><span style="display:inline-flex;align-items:center;gap:8px"><span style="width:12px;height:12px;border-radius:3px;background:#f5c344;display:inline-block"></span>أصفر</span></td><td style="padding:9px 12px;border:1px solid #dde1ea">على الصف كامل — كل مواد الطالب في هذه الدورة جدولة جزئية، لم يتم تغطيتها بالكامل</td></tr>
+      <tr style="background:#f7f8fb"><td style="padding:9px 12px;border:1px solid #dde1ea"><span style="display:inline-flex;align-items:center;gap:8px"><span style="width:12px;height:12px;border-radius:3px;background:#e05a4e;display:inline-block"></span>صفوف حمراء في آخر الشيت</span></td><td style="padding:9px 12px;border:1px solid #dde1ea">طلاب نشطون لم يحصلوا على أي حصة، مع سبب ذلك (لا توجد أوقات متاحة / لا يوجد مدرس مناسب)</td></tr>
+    </tbody>
+  </table>
+
+  <!-- Step 6 -->
+  <h2 style="font-size:20px;font-weight:800;color:#0f2540;margin:0 0 12px">الخطوة 6 — بعد انعقاد الحصة: تحديث الحالة يدويًا</h2>
+  <p style="font-size:14px;color:#2c3348;margin:0 0 16px">شيت Lessons_Schedule يحتوي على كل الحصص المجدولة (القادمة والسابقة). بعد أن تنعقد الحصة فعليًا (أو يتم إلغاؤها)، يجب على المستخدم تحديث عمود Status لهذا الصف يدويًا بإحدى القيم التالية، تمهيدًا لنقلها في الخطوة التالية:</p>
+  <div style="display:flex;gap:16px;margin-bottom:16px">
+    <div style="flex:1;background:#eafaf0;border:1px solid #b9e6c9;border-radius:10px;padding:14px 18px">
+      <div style="font-weight:800;font-size:13.5px;color:#1e6e46;margin-bottom:8px">تنقل إلى شيت completed</div>
+      <ul style="margin:0;padding-inline-start:20px;font-size:13.5px;color:#245c3d"><li>Completed</li><li>Paid_Cancelled</li><li>Trail_Done</li></ul>
+    </div>
+    <div style="flex:1;background:#fdeceb;border:1px solid #f2c2be;border-radius:10px;padding:14px 18px">
+      <div style="font-weight:800;font-size:13.5px;color:#7a2620;margin-bottom:8px">تنقل إلى شيت cancelled</div>
+      <ul style="margin:0;padding-inline-start:20px;font-size:13.5px;color:#7a2620"><li>Cancelled</li><li>Trail_Canceled</li><li>Teacher_Canceled</li><li>Student_Canceled</li></ul>
+    </div>
+  </div>
+  <div style="background:#f3f6fb;border:1px solid #d7dfec;border-radius:10px;padding:14px 18px;font-size:13.5px;color:#2c3348;margin-bottom:8px"><strong>مهم:</strong> أي صف تبقى حالته على القيمة الافتراضية Scheduled يظل في شيت Lessons_Schedule ولا يُنقل، لأن النظام يعتبره حصة لم تنعقد بعد.</div>
+
+  <!-- Step 7 -->
+  <h2 style="font-size:20px;font-weight:800;color:#0f2540;margin:24px 0 6px;padding-top:8px">الخطوة 7 — نقل الحصص حسب الحالة</h2>
+  <div style="background:#fff8e1;border:1px solid #f0d778;border-radius:10px;padding:14px 18px;font-size:14px;color:#5a4a12;font-weight:700;margin-bottom:16px">الزر: «نقل الحصص حسب الحالة»</div>
+  <p style="font-size:14px;color:#2c3348;margin:0 0 8px">يُشغّل هذا الزر بعد تحديث أعمدة Status للحصص المنتهية، ويقوم بالتالي تلقائيًا:</p>
+  <ul style="font-size:14px;color:#2c3348;margin:0 0 16px;padding-inline-start:22px">
+    <li style="margin-bottom:6px">يفحص كل صف في Lessons_Schedule ويقرأ قيمة Status الخاصة به.</li>
+    <li style="margin-bottom:6px">ينسخ الصف كاملًا إلى شيت completed أو شيت cancelled حسب الجدول في الخطوة السابقة.</li>
+    <li style="margin-bottom:6px">يبحث عن Parent_ID الخاص بالطالب من شيت Students، ويضيفه في عمود Parent_No بشيت completed.</li>
+    <li>يحذف الصف من شيت Lessons_Schedule بعد نسخه بنجاح.</li>
+  </ul>
+  <div style="background:#fdeceb;border:1px solid #f2c2be;border-radius:10px;padding:14px 18px;font-size:13.5px;color:#7a2620;margin-bottom:12px"><strong>حالة خاصة — Trail_Done:</strong> عند نقل حصة تجريبية، يضع النظام تلقائيًا Final_Price = 0 ويلوّن خلية الحالة والسعر باللون الأحمر الفاتح للتنويه بأنها حصة تجريبية غير مدفوعة.</div>
+  <div style="background:#f3f6fb;border:1px solid #d7dfec;border-radius:10px;padding:14px 18px;font-size:13.5px;color:#2c3348;margin-bottom:8px"><strong>تنبيه:</strong> إذا كان الطالب بدون Parent_ID مطابق في شيت Students، فستظهر رسالة في نهاية العملية توضح عدد هذه الحالات ليتم مراجعتها يدويًا.</div>
+
+  <!-- Step 8 -->
+  <h2 style="font-size:20px;font-weight:800;color:#0f2540;margin:24px 0 6px;padding-top:8px">الخطوة 8 — حساب مدة الحصة المكتملة</h2>
+  <div style="background:#fff8e1;border:1px solid #f0d778;border-radius:10px;padding:14px 18px;font-size:14px;color:#5a4a12;font-weight:700;margin-bottom:16px">الزر: «حساب مدة الحصص (Duration_Hours)»</div>
+  <p style="font-size:14px;color:#2c3348;margin:0 0 8px">يعمل هذا الزر فقط على شيت completed، ويحسب عمود Duration_Hours لكل حصة:</p>
+  <ul style="font-size:14px;color:#2c3348;margin:0 0 16px;padding-inline-start:22px">
+    <li style="margin-bottom:6px">يحسب الفرق بالساعات بين Start_Time_Teacher و End_Time_Teacher.</li>
+    <li style="margin-bottom:6px">إذا كان أحد الوقتين مفقودًا، أو كان وقت النهاية أقل من أو يساوي وقت البداية، يكتب القيمة ERROR بدل الرقم.</li>
+    <li style="margin-bottom:6px">لا يعيد حساب أي صف له بالفعل قيمة في Duration_Hours (سواء رقم أو ERROR) لتفادي التكرار.</li>
+    <li>يُنشئ أو يحدّث شيتًا باسم Duration_Note يحتوي على سجل تفصيلي لكل عملية حساب، بالإضافة إلى ملخص عام (عدد الصفوف المعالجة، المحسوبة، المتجاهلة، والأخطاء).</li>
+  </ul>
+  <div style="background:#f3f6fb;border:1px solid #d7dfec;border-radius:10px;padding:14px 18px;font-size:13.5px;color:#2c3348;margin-bottom:22px"><strong>نصيحة:</strong> بعد كل تشغيل لهذا الزر، افتح شيت Duration_Note وراجع عدد صفوف ERROR إن وُجدت، وصحّح وقت المدرس في الصف المعني بشيت completed.</div>
+
+  <!-- Notes -->
+  <h2 style="font-size:20px;font-weight:800;color:#0f2540;margin:0 0 12px">ملاحظات وتنبيهات عامة</h2>
+  <ul style="font-size:14px;color:#2c3348;margin:0;padding-inline-start:22px">
+    <li style="margin-bottom:8px">يجب اتباع ترتيب الخطوات كما ورد في هذا الدليل — كل خطوة تعتمد على اكتمال التي قبلها.</li>
+    <li style="margin-bottom:8px">لا تُشغّل زر «نقل الحصص حسب الحالة» إلا بعد التأكد من تحديث عمود Status لكل الحصص المنتهية فعليًا.</li>
+    <li style="margin-bottom:8px">المنطقة الزمنية (Timezone) لكل من الطالب والمدرس هي أساس نجاح عملية الجدولة التلقائية — أي خطأ فيها يؤدي لجدولة غير صحيحة.</li>
+    <li>هذا الجزء من الدليل يغطي فقط دورة العمل الأساسية (التسجيل → الجدولة → النقل → حساب المدة). الشيتات الأخرى (المدفوعات، الرواتب، العروض، التقارير المالية...) سيتم تغطيتها في أجزاء لاحقة من الدليل.</li>
+  </ul>
+
+  <footer class="doc-footer">دليل استخدام نظام إدارة الحصص</footer>
+
+</div>
+</div>
+</body>
+</html>
