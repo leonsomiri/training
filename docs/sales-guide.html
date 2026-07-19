@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الدليل التشغيلي لموظفي التسجيل والمبيعات</title>
+<meta name="description" content="دليل الموظف من أول رسالة وحتى الحصة التجريبية: مراحل رحلة العميل الخمس، السكريبتات الجاهزة، ومعالجة الاعتراضات الشائعة.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:url" content="https://leonsomiri.github.io/training/sales-guide.html">
+<meta property="og:title" content="الدليل التشغيلي لموظفي التسجيل والمبيعات">
+<meta property="og:description" content="دليل الموظف من أول رسالة وحتى الحصة التجريبية: مراحل رحلة العميل الخمس، السكريبتات الجاهزة، ومعالجة الاعتراضات الشائعة.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="الدليل التشغيلي لموظفي التسجيل والمبيعات">
+<meta name="twitter:description" content="دليل الموظف من أول رسالة وحتى الحصة التجريبية.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html{background:#faf8f5}
+  body{
+    margin:0;
+    background:#faf8f5;
+    font-family:'Cairo',Tahoma,Arial,sans-serif;
+    color:#232a3d;
+    -webkit-text-size-adjust:100%;
+  }
+  .doc{
+    max-width:760px;
+    margin:0 auto;
+    padding:clamp(32px,7vw,76px) clamp(20px,6vw,56px) 64px;
+    direction:rtl;
+    text-align:right;
+    line-height:1.9;
+    font-size:17px;
+  }
+  h1,h2,h3{text-wrap:balance}
+  p{margin:0 0 18px}
+
+  .page-nav{font-size:14px;margin-bottom:22px}
+  .page-nav a{color:#c8622d;font-weight:700;text-decoration:none}
+  .page-nav a:hover{text-decoration:underline}
+
+  .cover{text-align:center;padding:6px 0 32px;border-bottom:3px solid #c8622d;margin-bottom:38px}
+  .eyebrow{display:inline-block;background:#c8622d;color:#fff;font-size:13.5px;font-weight:700;letter-spacing:0.5px;padding:7px 20px;border-radius:999px;margin-bottom:20px}
+  h1{font-size:clamp(26px,6vw,36px);font-weight:800;color:#0f2540;margin:0 0 12px}
+  .subtitle{font-size:17.5px;font-weight:600;color:#3a4256;margin:0}
+  .lede{font-size:16px;color:#5c6478;max-width:540px;margin:16px auto 0}
+
+  h2{font-size:22px;font-weight:800;color:#0f2540;margin:44px 0 16px}
+  h2:first-of-type{margin-top:0}
+  h2.section-break{padding-top:6px}
+  h3{font-size:17px;font-weight:800;color:#0f2540;margin:0 0 10px}
+
+  ol.toc{margin:0 0 10px;padding-inline-start:26px;font-size:16px;color:#2c3348}
+  ol.toc li{margin-bottom:9px}
+
+  /* stage roadmap */
+  .roadmap{display:flex;flex-direction:column;gap:11px;margin-bottom:10px}
+  .roadmap-row{display:flex;align-items:center;gap:16px;border-radius:10px;padding:16px 20px;background:#fdf1ea;border:1px solid #f0d3bd}
+  .roadmap-num{width:32px;height:32px;border-radius:50%;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:#c8622d;color:#fff}
+  .roadmap-title{font-weight:700;font-size:16px;color:#7a3c17}
+  .roadmap-sub{font-size:13.5px;margin-top:3px;color:#9a5a30}
+
+  /* stage section */
+  h2.stage-head{display:flex;align-items:center;gap:12px}
+  .stage-emoji{font-size:26px;line-height:1}
+
+  .rule{background:#fdf1ea;border:1px solid #f0d3bd;border-radius:10px;padding:16px 20px;font-size:15px;margin-bottom:18px;color:#6b3814;line-height:1.8}
+  .rule strong{font-weight:800;color:#7a3c17}
+
+  ul.steps,ol.steps{font-size:16px;color:#2c3348;margin:0 0 20px;padding-inline-start:26px}
+  ul.steps li,ol.steps li{margin-bottom:9px}
+  ul.steps ul{margin-top:8px;margin-bottom:0}
+
+  .kpi{display:flex;align-items:flex-start;gap:12px;background:#eaf6f6;border:1px solid #bfe4e2;border-radius:10px;padding:14px 18px;font-size:14.5px;color:#0e4a4d;margin-bottom:20px;line-height:1.8}
+  .kpi-tag{flex-shrink:0;background:#0e7c86;color:#fff;font-size:12px;font-weight:800;letter-spacing:0.3px;padding:4px 10px;border-radius:6px}
+
+  .guidance{background:#f3f6fb;border:1px solid #d7dfec;border-radius:10px;padding:16px 20px;font-size:15px;color:#2c3348;margin-bottom:18px;line-height:1.8}
+  .guidance strong{font-weight:800}
+
+  /* whatsapp-style script bubble */
+  .script-label{font-size:13px;font-weight:700;color:#3a8b4a;margin:0 0 8px;display:flex;align-items:center;gap:6px}
+  .script{
+    position:relative;
+    background:#e9fbe4;
+    border:1px solid #cdeec4;
+    border-radius:4px 14px 14px 14px;
+    padding:16px 18px;
+    font-size:15px;
+    color:#1c3a1e;
+    line-height:1.85;
+    margin-bottom:20px;
+    white-space:pre-line;
+  }
+  .script .fill{color:#0e7c86;font-weight:700}
+
+  .sales-tip{background:#fff8e1;border:1px solid #f0d778;border-radius:10px;padding:16px 20px;font-size:15px;color:#5a4a12;margin-bottom:20px;line-height:1.8}
+  .sales-tip strong{font-weight:800}
+  .sales-tip ul{margin:8px 0 0;padding-inline-start:22px}
+  .sales-tip li{margin-bottom:8px}
+
+  .callout-danger{background:#fdeceb;border:1px solid #f2c2be;border-radius:10px;padding:14px 18px;font-size:14.5px;color:#7a2620;margin-bottom:20px;line-height:1.8}
+  .callout-danger strong{font-weight:800}
+
+  /* summary roadmap */
+  .summary{background:#0f2540;border-radius:14px;padding:26px 28px;margin:8px 0 8px}
+  .summary h2{color:#fff;margin:0 0 16px}
+  .summary ol{margin:0;padding-inline-start:24px;font-size:15.5px;color:#dbe4f2}
+  .summary li{margin-bottom:10px}
+  .summary strong{color:#fff}
+
+  /* objections */
+  .objection{border:1px solid #e5e8ef;border-radius:14px;padding:22px 24px;margin-bottom:20px;background:#fff}
+  .objection-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+  .objection-emoji{font-size:22px}
+  .objection-title{font-size:16.5px;font-weight:800;color:#0f2540;margin:0}
+
+  footer{font-size:13px;color:#8b93a6;text-align:center;border-top:1px solid #e5e8ef;padding-top:18px;margin-top:44px}
+
+  @media (max-width:520px){
+    .doc{font-size:16px}
+  }
+</style>
+</head>
+<body>
+<div class="doc">
+
+  <div class="page-nav"><a href="index.html">الصفحة الرئيسية 🏠</a></div>
+
+  <div class="cover">
+    <div class="eyebrow">دليل الموظف</div>
+    <h1>الدليل التشغيلي لموظفي التسجيل والمبيعات</h1>
+    <p class="subtitle">من أول رسالة وحتى الحصة التجريبية</p>
+    <p class="lede">خمس مراحل تغطي رحلة العميل كاملة: الاستجابة الأولى، التشخيص، بناء القيمة، حجز الحصة التجريبية، وتأمين الحضور — مع السكريبتات الجاهزة لكل مرحلة، وردود معالجة الاعتراضات الأكثر شيوعًا.</p>
+  </div>
+
+  <h2>محتويات هذا الدليل</h2>
+  <ol class="toc">
+    <li>خارطة الطريق: مراحل رحلة العميل الخمس</li>
+    <li>المرحلة 1 — الاستجابة السريعة وبناء الألفة</li>
+    <li>المرحلة 2 — التشخيص الدقيق قبل العرض</li>
+    <li>المرحلة 3 — تفصيل الحل وبناء القيمة</li>
+    <li>المرحلة 4 — حجز الحصة التجريبية كأداة تقييم</li>
+    <li>المرحلة 5 — تأمين الحضور وتقليل نسبة الغياب</li>
+    <li>ملخص سريع: خارطة الطريق</li>
+    <li>ملحق: سكريبتات معالجة الاعتراضات الشائعة</li>
+  </ol>
+
+  <h2>خارطة الطريق: مراحل رحلة العميل الخمس</h2>
+  <p>كل محادثة مع ولي أمر جديد تمر بخمس مراحل بنفس الترتيب. لا تُقفز أي مرحلة، وخصوصًا لا تُذكر الأسعار أو تفاصيل المناهج قبل إتمام مرحلة التشخيص.</p>
+  <div class="roadmap">
+    <div class="roadmap-row"><div class="roadmap-num">1</div><div><div class="roadmap-title">👥 الاستجابة السريعة وبناء الألفة</div><div class="roadmap-sub">ترحيب سريع وشخصي، بلا رسائل آلية جافة</div></div></div>
+    <div class="roadmap-row"><div class="roadmap-num">2</div><div><div class="roadmap-title">🔍 التشخيص الدقيق قبل العرض</div><div class="roadmap-sub">أسئلة مفتوحة قبل أي حديث عن السعر أو المنهج</div></div></div>
+    <div class="roadmap-row"><div class="roadmap-num">3</div><div><div class="roadmap-title">💡 تفصيل الحل وبناء القيمة</div><div class="roadmap-sub">عرض مخصص مبني على إجابات ولي الأمر نفسه</div></div></div>
+    <div class="roadmap-row"><div class="roadmap-num">4</div><div><div class="roadmap-title">🗓️ حجز الحصة التجريبية كأداة تقييم</div><div class="roadmap-sub">موعد محدد بتوقيت العميل المحلي</div></div></div>
+    <div class="roadmap-row"><div class="roadmap-num">5</div><div><div class="roadmap-title">🚀 تأمين الحضور وتقليل نسبة الغياب</div><div class="roadmap-sub">تأكيد، تذكيرات، ودعم فني استباقي</div></div></div>
+  </div>
+
+  <!-- STAGE 1 -->
+  <h2 class="section-break stage-head"><span class="stage-emoji">👥</span> المرحلة 1 — الاستجابة السريعة وبناء الألفة</h2>
+  <div class="rule"><strong>القاعدة الصحية:</strong> الرد السريع يعكس الجدية، لكن الأهم هو تخصيص الرد والابتعاد عن الرسائل الآلية الجافة.</div>
+  <h3>خطوات الموظف</h3>
+  <ul class="steps">
+    <li><strong>السرعة والترحيب:</strong> الرد خلال دقائق بأسلوب ودود، واستخدام اسم ولي الأمر فور معرفته (مثال: "أهلاً بحضرتك يا فندم/ يا أم أحمد").</li>
+    <li><strong>كسر الجليد وضبط التوقعات:</strong> إظهار الترحيب الحار، والتأكيد على أننا هنا لمساعدتهم وتسهيل الرحلة على أولادهم، وليس فقط لبيع خدمة.</li>
+  </ul>
+  <div class="kpi"><span class="kpi-tag">KPI</span><span>نسبة الرد في أقل من 15 دقيقة، واستخدام اسم العميل مرتين على الأقل في الحوار أو استبدالها بكلمة (حضرتك).</span></div>
+  <div class="guidance"><strong>💡 توجيه للموظف:</strong> الهدف هنا ليس بيع الخدمة، بل الترحيب الحار وإشعار ولي الأمر بأنه يتحدث مع "مستشار تعليمي" يهتم بأولاده، وليس مجرد رد آلي. (يتم تعديل النص حسب المادة المعروضة في الإعلان).</div>
+  <p class="script-label">📄 سكريبت الرد الأول السريع</p>
+  <div class="script">أهلاً بحضرتك يا فندم، وسعيد جداً بتواصلك معنا في أكاديمية <span class="fill">ScopeArk</span>! ✨
+يسعدنا جداً اهتمامك بالإعلان الخاص ببرامجنا التعليمية المخصصة للأبناء في المغترب. نحن هنا لمساعدتكم في توفير أفضل تجربة تعليمية تجمع بين كفاءة المناهج الدولية والحفاظ على الهوية واللغة.</div>
+
+  <!-- STAGE 2 -->
+  <h2 class="section-break stage-head"><span class="stage-emoji">🔍</span> المرحلة 2 — التشخيص الدقيق قبل العرض</h2>
+  <div class="rule"><strong>القاعدة الصحية:</strong> "التشخيص قبل الوصفة". موظف المبيعات المحترف لا يشرح ميزات الأكاديمية ولا يذكر الأسعار قبل أن يفهم بدقة مشكلة العميل واحتياجاته.</div>
+  <h3>خطوات الموظف</h3>
+  <ul class="steps">
+    <li>طرح أسئلة مفتوحة (Open-Ended Questions) لاستخراج المعلومات الأساسية:
+      <ul>
+        <li><strong>الديموغرافيا:</strong> "حضرتك مقيم في أمريكا ولا كندا؟" (لتحديد فرق التوقيت).</li>
+        <li><strong>المستوى الحالي:</strong> "ما هو الصف الدراسي للطالب حالياً؟ وكيف تقيّم مستواه في المواد التي يحتاجها؟"</li>
+        <li><strong>نقطة الألم (Pain Point):</strong> "ما هي أكبر عقبة تواجه الطالب حالياً؟ هل هي التأسيس من الصفر، أم متابعة منهج المدرسة، أم تطوير مهارات مفقودة؟"</li>
+      </ul>
+    </li>
+  </ul>
+  <div class="kpi"><span class="kpi-tag">KPI</span><span>عدم إرسال أي تفاصيل عن المناهج أو الأسعار قبل الحصول على إجابات واضحة لهذه الأسئلة.</span></div>
+  <div class="guidance"><strong>💡 توجيه للموظف:</strong> بعد أن يذكر العميل اسمه (مثلاً: أم أحمد أو أبو سيف)، ننتقل فوراً لمرحلة الأسئلة الذكية. ممنوع إرسال الأسعار أو تفاصيل الحصص قبل الحصول على هذه الإجابات لكي يبدو الموظف خبيراً.</div>
+  <p class="script-label">📄 سكريبت طرح الأسئلة التشخيصية</p>
+  <div class="script">علشان أقدر أساعد حضرتك بشكل دقيق وأقترح البرنامج والمنهج الأنسب، ممكن تفيديني سريعاً ببعض التفاصيل:
+1️⃣ مكان الإقامة الحالي: (حضرتك مقيمة في أمريكا ولا كندا؟) علشان نراعي فرق التوقيت والمنهج.
+2️⃣ عمر الطالب وصفه الدراسي: كم عمر الطالب وما هو صفهم الحالي في المدرسة؟
+3️⃣ المواد المستهدفة: ماهي المادة التي يحتاج الطالب المساعدة بها؟
+4️⃣ الهدف الأساسي: هل نبدأ معهم من الصفر والتأسيس، أم متابعة وتطوير المنهج المدرسي والمراجعات؟</div>
+  <div class="sales-tip"><strong>🛠️ قاعدة مبيعات صحية:</strong> يمكن طرح الأسئلة في جملة واحدة مختصرة بدل التعداد، مثل: "ممكن أعرف عمر الطالب وصفه الدراسي؟ وماهي المادة التي يحتاج المساعدة بها؟". وإذا أجاب ولي الأمر على جزء ونسي الآخر، يعيد الموظف السؤال بلطف: "ما شاء الله، الله يحفظه لكِ يا رب.. بخصوص المنهج هل هو المنهج الأمريكي أم الكندي في مدرسته؟"</div>
+
+  <!-- STAGE 3 -->
+  <h2 class="section-break stage-head"><span class="stage-emoji">💡</span> المرحلة 3 — تفصيل الحل وبناء القيمة</h2>
+  <div class="rule"><strong>القاعدة الصحية:</strong> لا تبع "الدروس"، بل بع "النتيجة والراحة". الموظف المحترف يعيد صياغة ميزات الأكاديمية بناءً على كلام ولي الأمر في المرحلة السابقة (Mirroring).</div>
+  <h3>خطوات الموظف</h3>
+  <ul class="steps">
+    <li><strong>ربط الميزة بالاحتياج:</strong> إذا قال ولي الأمر أن ابنه يمل سريعاً، يركز الموظف على أن الحصص فردية (One-to-One) وتفاعلية بالكامل. وإذا اشتكى من ضيق الوقت، يركز على مرونة المواعيد وتنسيقها بما يناسب فرق التوقيت في كندا/أمريكا.</li>
+    <li><strong>بناء القيمة قبل السعر:</strong> التركيز على كفاءة المعلمين المتخصصين في المناهج الدولية وقدرتهم على التعامل مع الطلاب، وجعل البيئة التعليمية جاذبة ومشوقة، والتأكيد على أنهم مدرسين native speakers وليسوا عرب.</li>
+  </ul>
+  <div class="kpi"><span class="kpi-tag">KPI</span><span>صياغة عرض مخصص يذكر مشكلة الطالب بعينها ويقدم الحل لها (مثال: "متقلقيش حضرتك معانا طلاب كتير كانوا بيعانوا من نفس مشكلة طفلك وبفضل الله تحسنوا معانا في وقت سريع جدا").</span></div>
+  <div class="guidance"><strong>💡 توجيه للموظف:</strong> بناءً على إجابات ولي الأمر في المرحلة السابقة، يختار الموظف الفقرة المناسبة ويقتبس كلمات العميل (Mirroring) لإشعاره بأن الحل مصمم له خصيصاً. ممنوع إرسال تسعير عشوائي هنا.</div>
+
+  <p class="script-label">📄 الخيار (أ) — إذا كان الهدف التأسيس والحفاظ على الهوية</p>
+  <div class="script">ما شاء الله، ربنا يحميه ويقر عينك به يا أم [اسم العميل]. بناءً على تفضيلك، برنامجنا في أكاديمية <span class="fill">ScopeArk</span> مصمم تماماً ليناسب الأبناء في المغترب.
+دروسنا بتكون فردية بالكامل (One-to-One)، يعني المعلم متفرغ تماماً للطالب وبنعتمد على أساليب تفاعلية وألعاب ذكية تخلي وقت الحصة ممتع ومحبب له بدون أي ملل، مع التركيز على مهارات النطق والقراءة الصحيحة بكل سلاسة.</div>
+
+  <p class="script-label">📄 الخيار (ب) — إذا كان الهدف متابعة المناهج المدرسية الدولية (كندا/أمريكا)</p>
+  <div class="script">أهلاً بكِ يا أم [اسم العميل].. مادام الطالب بيتابع المنهج الدراسي [الأمريكي/الكندي]، فإحنا بنوفر له معلمين متخصصين وخبراء في هذه المناهج تحديداً.
+الحصص بتكون فردية ومباشرة، وبنركز فيها على نقاط الضعف، شرح الدروس الصعبة، ومراجعة الواجبات والامتحانات، علشان نضمن إنه متفوق ومواكب لمدرسته تماماً، وبأوقات مرنة جداً تناسب جدولكم اليومي.
+وكمان بنوفر لحضرتك تقرير بعد كل حصة عن مستواه ومعدل تطوره ومدى استفادته، وعشان تكوني مطمنة أكتر، الحصة بيكون فيها مشرف أكاديمي بيدخل أحيانًا بدون علم المدرس المسبق عشان يراقب الحصة ويتأكد من جودة التعليم.</div>
+
+  <!-- STAGE 4 -->
+  <h2 class="section-break stage-head"><span class="stage-emoji">🗓️</span> المرحلة 4 — حجز الحصة التجريبية كأداة تقييم</h2>
+  <div class="rule"><strong>القاعدة الصحية:</strong> الحصة التجريبية ليست "هدية مجانية بلا قيمة"، بل خطوة استشارية ضرورية لتقييم مستوى الطالب وتحديد الخطة الأنسب له، وفرصة لولي الأمر ليرى طريقة التدريس ومستوى المدرسين ويبدأ وهو مطمئن (مع التأكيد أنها بلا أي التزام مادي). هذا يرفع من قيمتها ويجعل العميل يلتزم بالحضور.</div>
+  <h3>خطوات الموظف</h3>
+  <ul class="steps">
+    <li><strong>تأطير الحصة:</strong> "علشان نضمن نضع الخطة التعليمية الصحيحة، الخطوة القادمة هي حجز جلسة تقييمية وتجريبية مجانية مع معلم متخصص لمعرفة مستوى الطالب بدقة."</li>
+    <li><strong>تنسيق التوقيت الذكي:</strong> الموظف هو المسؤول عن معرفة فرق التوقيت (البرنامج يحسب التوقيت بدقة)، ويعرض على ولي الأمر مواعيد محددة بتوقيته المحلي (مثال: "متاح لدينا يوم السبت الساعة 4 عصراً بتوقيت نيويورك/تورونتو، هل هذا الموعد يناسبكم؟").</li>
+    <li><strong>جمع البيانات وتأكيد الجدية:</strong> أخذ اسم الطالب الثنائي، وتأكيد الموعد برقم تواصل واتساب في حال كان التواصل عبر مسنجر. وبمجرد تسجيل رقم الطالب في الواتساب، يُحفظ الرقم باسم الطالب الثنائي مع الجريد واسم المادة (مثال: Mohamed Ahmed G5 Mathe & Since in France).</li>
+  </ul>
+  <div class="guidance"><strong>💡 توجيه للموظف:</strong> لا ننتظر من العميل أن يطلب؛ الموظف هو من يقود الحوار ويطرح الحصة التجريبية كـ"جلسة استشارية وتقييمية ضرورية"، ويتحمل مسؤولية حساب فرق التوقيت تماماً.</div>
+  <p class="script-label">📄 سكريبت عرض الحصة التجريبية وتحديد الموعد</p>
+  <div class="script">وعلشان نحدد نقطة البداية الصح والخطة التعليمية الأنسب لـ[اسم الطالب]، الخطوة القادمة والأساسية عندنا هي حجز حصة تقييمية وتجريبية (مجانية بالكامل).
+من خلال هذه الحصة، بيقدر المعلم يقيم مستوى [اسم الطالب] بدقة، وحضرتك بتشوفي بنفسك طريقة الشرح التفاعلية ومدى انسجامه مع المعلم أونلاين.
+الخيارات المتاحة عندنا لتنسيق الموعد: تناسبكم الحصة تكون بوسط الأسبوع ولا بنهاية الأسبوع (السبت/الأحد)؟ وإيه هو التوقيت المفضل لحضرتك مع العلم أن الحصص متاحة يومياً من الرابعة حتى العاشرة مساءً؟</div>
+  <div class="sales-tip">
+    <strong>🛠️ قاعدة مبيعات صحية:</strong>
+    <ul>
+      <li>إذا حدد العميل الموعد (مثلاً: السبت 4 عصراً بتوقيت تورونتو)، يراجع الموظف جدول المواعيد فوراً ويؤكد الموعد للبناء عليه.</li>
+      <li><strong>تنبيه صارم:</strong> يمنع الموظف من قول "توقيت مصر" للعميل المغترب؛ كل الحديث يجب أن يدور حول توقيت العميل المحلي، تجنباً لأي لبس.</li>
+    </ul>
+  </div>
+
+  <!-- STAGE 5 -->
+  <h2 class="section-break stage-head"><span class="stage-emoji">🚀</span> المرحلة 5 — تأمين الحضور وتقليل نسبة الغياب</h2>
+  <div class="rule"><strong>القاعدة الصحية:</strong> المبيعات الصحية تعتمد على المتابعة المنظمة (Follow-up) دون إلحاح مزعج، مع تقديم الدعم التقني لرفع الحرج عن العميل.</div>
+  <h3>خطوات الموظف</h3>
+  <ul class="steps">
+    <li><strong>رسالة التأكيد الفورية:</strong> إرسال رسالة منظمة تحتوي على الموعد (بتوقيت العميل)، ورابط المنصة (مثل Zoom)، والتعليمات التقنية الأساسية (التواجد في مكان هادئ، استخدام سماعة، وجاهزية الكاميرا والميكروفون).</li>
+    <li><strong>التذكير الذكي:</strong> تذكير قبل الحصة بـ 24 ساعة، وتذكير أخير قبل الحصة بربع ساعة.</li>
+    <li><strong>الدعم الفني المباشر:</strong> التواجد أونلاين قبل الحصة بـ 10 دقائق لمساعدة ولي الأمر في حال واجهته أي مشكلة في الدخول، مما يعكس احترافية الأكاديمية العالية.</li>
+  </ul>
+  <div class="guidance"><strong>💡 توجيه للموظف:</strong> العميل في هذه المرحلة يشعر بالتوتر (هل سيكون الرابط صحيحاً؟ هل سيعرف ابني كيف يستخدم المنصة؟). دورك هنا طمأنة العميل، وتقديم الدعم التقني الاستباقي لضمان عدم وجود أي عذر لعدم الحضور.</div>
+
+  <p class="script-label">📄 1. رسالة التأكيد (تُرسل فور حجز الموعد)</p>
+  <div class="script">أهلاً بكِ يا أم [اسم العميل]، تم تأكيد حجز الحصة التجريبية لـ[اسم الطالب]. سعداء جداً ببدء هذه الرحلة معكم! إليكِ تفاصيل الموعد:
+📅 التاريخ: [اليوم]، [التاريخ]
+⏰ الوقت: [الساعة] بتوقيت [اسم مدينة العميل].
+💻 رابط الحصة: [رابط الزووم/المنصة]
+
+نصائح لضمان أفضل تجربة:
+– يرجى التأكد من تواجد [اسم الطالب] في مكان هادئ ومناسب للدراسة.
+– يُفضّل تجربة فتح الرابط قبل الموعد بـ 5 دقائق للتأكد من عمل الكاميرا والميكروفون.
+– في حال واجهتكم أي مشكلة تقنية، أنا موجود معكِ هنا على الواتساب لمساعدتكِ فوراً.</div>
+
+  <p class="script-label">📄 2. رسالة التذكير (قبل الحصة بـ 24 ساعة)</p>
+  <div class="script">صباح الخير/مساء الخير يا أم [اسم العميل]، 🌸 نذكركم بحصتنا التجريبية المقررة غداً لـ[اسم الطالب] الساعة [الوقت بتوقيت العميل]. نحن متشوقون جداً للقائه والبدء في رحلته التعليمية معنا! هل كل شيء جاهز لديكم؟</div>
+
+  <p class="script-label">📄 3. رسالة التذكير الأخيرة (قبل الحصة بربع ساعة)</p>
+  <div class="script">أهلاً بكِ يا أم [اسم العميل]، تذكير سريع أن حصة [اسم الطالب] التجريبية ستبدأ بعد ربع ساعة من الآن. نحن والمعلم بانتظاركم، وبالتوفيق للبطل في حصته الأولى! 😊</div>
+
+  <div class="sales-tip">
+    <strong>🛠️ قاعدة مبيعات صحية:</strong>
+    <ul>
+      <li><strong>قاعدة "الإلغاء الذكي":</strong> إذا شعرتِ (كموظفة) أن العميل غير متفاعل في الرد على رسالة التأكيد، بادري بالاتصال أو إرسال رسالة صوتية ودودة: "أهلاً يا أم [اسم العميل]، حبيت أتأكد بس لو الرابط وصلك بوضوح وتوقيت الحصة مناسب لكم بكرة؟" هذا الاتصال يقلل من احتمالية الـ No-show بنسبة كبيرة.</li>
+      <li><strong>كن "الدعم الفني":</strong> لا تترك العميل يواجه المشكلة التقنية بمفرده. إذا تأخر الطالب 5 دقائق، أرسلي رسالة فوراً: "أهلاً يا أم [اسم العميل]، هل واجهتم مشكلة في الدخول؟ أنا موجود للمساعدة."</li>
+    </ul>
+  </div>
+
+  <div class="summary">
+    <h2>🏆 ملخص سريع لدليل الموظف (خارطة الطريق)</h2>
+    <ol>
+      <li><strong>الاستقبال:</strong> سرعة + ترحيب + تخصيص.</li>
+      <li><strong>التشخيص:</strong> أسئلة مفتوحة + استماع نشط + عدم ذكر السعر مبكراً.</li>
+      <li><strong>القيمة:</strong> حل المشكلة التي ذكرها العميل + ربطها بمميزاتنا.</li>
+      <li><strong>الحجز:</strong> موعد محدد بتوقيت العميل + تأطير الحصة كتقييم ضروري.</li>
+      <li><strong>التأكيد:</strong> تواصل مستمر + تذكيرات + دعم تقني استباقي.</li>
+    </ol>
+  </div>
+
+  <h2 class="section-break">ملحق الدليل: سكريبتات معالجة الاعتراضات الأكثر شيوعاً</h2>
+
+  <div class="objection">
+    <div class="objection-head"><span class="objection-emoji">💰</span><p class="objection-title">"السعر غالي جداً" / "الميزانية لا تسمح"</p></div>
+    <div class="guidance"><strong>💡 توجيه للموظف:</strong> لا تدافع عن السعر ولا تهاجم الأكاديميات الأخرى. القاعدة الصحية هنا: "التعاطف، ثم شرح القيمة، ثم تسهيل الدفع".</div>
+    <p class="script-label">📄 سكريبت الرد الاحترافي</p>
+    <div class="script">بفهم جداً حرصك على الميزانية يا أم [اسم العميل] وحقك تماماً تبحثي عن أفضل خيار. لكن حابب أوضح لحضرتك إن السعر عندنا مش مجرد (سعر حصة)، هو استثمار في كفاءة معلم متخصص ومؤهل للتعامل مع المناهج الدولية والطلاب، بالإضافة لكون الحصص فردية بالكامل (One-to-One) يعني ابننا بياخد اهتمام 100% لتطوير مستواه بسرعة، وده بيوفر عليكِ وقت وفلوس كتير على المدى الطويل مقارنة بالمجموعات الكبيرة.
+وعلشان بنهتم بوجود [اسم الطالب] معانا، الأكاديمية بتوفر (باقات مرنة / أنظمة سداد مريحة) بنقدر نختار منها الأنسب لكم بعد الحصة التجريبية والتقييم مباشرة. إيه رأيك نثبت موعد التقييم أولاً ونشوف مستوى الطالب؟</div>
+  </div>
+
+  <div class="objection">
+    <div class="objection-head"><span class="objection-emoji">🖥️</span><p class="objection-title">"أخاف ابني ما يركز في الأونلاين" / "جربنا أونلاين قبل كده وفشل"</p></div>
+    <div class="guidance"><strong>💡 توجيه للموظف:</strong> وافق على كلامها أولاً لتكسب ثقتها (التعاطف)، ثم اشرح لماذا نظام ScopeArk مختلف عن تجاربها السابقة.</div>
+    <p class="script-label">📄 سكريبت الرد الاحترافي</p>
+    <div class="script">عندك حق تماماً يا فندم، وتخوفك في محله جداً! للأسف كتير من تجارب الأونلاين بتكون عبارة عن محاضرات جافة مسجلة أو مجموعات كبيرة الطالب بيفقد فيها التركيز.
+لكن في <span class="fill">ScopeArk</span> الوضع مختلف تماماً؛ الحصة فردية بين المعلم والطالب فقط، وبنعتمد على نظام التعليم التفاعلي القائم على الألعاب والوسائل البصرية اللي بتجذب انتباه الطفل وتخليه مشارك طول الوقت مش مجرد مستمع.
+وعشان كده إحنا بنصر على (الحصة التجريبية المجانية)، علشان حضرتك تشوفي بنفسك تفاعل [اسم الطالب] ومدى حبه لطريقة الشرح قبل ما تاخدي أي قرار بالاشتراك. هل حابة نخلي الموعد السبت ولا الأحد؟</div>
+  </div>
+
+  <div class="objection">
+    <div class="objection-head"><span class="objection-emoji">👥</span><p class="objection-title">"لازم أستشير والده أولاً" / "هرجعلك بعد ما أكلم زوجي"</p></div>
+    <div class="guidance"><strong>💡 توجيه للموظف:</strong> احترم القرار تماماً، لكن لا تترك المحادثة مفتوحة بلا موعد. الهدف هو جعل الأب جزءاً من الحصة التجريبية وليس عائقاً قبلها.</div>
+    <p class="script-label">📄 سكريبت الرد الاحترافي</p>
+    <div class="script">بالتأكيد يا فندم، خطوة ممتازة وطبعاً رأي والده أساسي ومهم جداً.
+علشان نسهل على حضرتك وعلى والده اتخاذ القرار، إيه رأيك نحجز موعد الحصة التجريبية والتقييم المجاني في وقت يكون والده متواجد فيه؟ بحيث يحضر معانا أول 10 دقائق يشوف بنفسه المنصة وطريقة الشرح والكفاءة اللي بنقدمها، ويكون القرار مبني على تجربة حية وواضحة للجميع.
+هل يناسبكم موعد في نهاية الأسبوع مثلاً حتى ننسقه سوا؟</div>
+  </div>
+
+  <div class="callout-danger"><strong>ملاحظة ختامية:</strong> وهنا تنتهي المرحلة الأولى من التدريب، وهي أهم خطوة في كسب ثقة العميل قبل انضمامه إلى الأكاديمية.</div>
+
+  <footer>الدليل التشغيلي لموظفي التسجيل والمبيعات — ScopeArk</footer>
+
+</div>
+</body>
+</html>

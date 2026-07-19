@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>دليل استخدام نظام إدارة الحصص — الجزء الأول: دورة العمل الأساسية</title>
-<meta name="description" content="دليل استخدام نظام إدارة الحصص — الجزء الأول: دورة العمل الأساسية على شيتات الجدولة، من تسجيل الطالب والمدرس إلى توليد الجدول تلقائيًا ونقل الحصص بعد انعقادها.">
+<title>أدلة الاستخدام — ScopeArk</title>
+<meta name="description" content="فهرس أدلة الاستخدام: دليل نظام إدارة الحصص (الجزء الأول والثاني)، والدليل التشغيلي لموظفي التسجيل والمبيعات.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ar_AR">
 <meta property="og:url" content="https://leonsomiri.github.io/training/">
-<meta property="og:title" content="دليل استخدام نظام إدارة الحصص — الجزء الأول: دورة العمل الأساسية">
-<meta property="og:description" content="من تسجيل الطالب والمدرس، إلى توليد الجدول تلقائيًا، ثم نقل الحصص بعد انعقادها، وحساب مدتها الفعلية.">
+<meta property="og:title" content="أدلة الاستخدام — ScopeArk">
+<meta property="og:description" content="فهرس أدلة الاستخدام: دليل نظام إدارة الحصص، والدليل التشغيلي لموظفي التسجيل والمبيعات.">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="دليل استخدام نظام إدارة الحصص — الجزء الأول">
-<meta name="twitter:description" content="دورة العمل الأساسية على شيتات الجدولة: من تسجيل الطالب والمدرس إلى توليد الجدول تلقائيًا ونقل الحصص بعد انعقادها.">
+<meta name="twitter:title" content="أدلة الاستخدام — ScopeArk">
+<meta name="twitter:description" content="فهرس أدلة الاستخدام: دليل نظام إدارة الحصص، والدليل التشغيلي لموظفي التسجيل والمبيعات.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -26,341 +26,106 @@
     color:#232a3d;
     -webkit-text-size-adjust:100%;
   }
-  .doc{
+  .wrap{
     max-width:760px;
     margin:0 auto;
-    padding:clamp(32px,7vw,76px) clamp(20px,6vw,56px) 64px;
+    padding:clamp(48px,8vw,88px) clamp(20px,6vw,56px) 64px;
     direction:rtl;
     text-align:right;
-    line-height:1.9;
-    font-size:17px;
   }
-  h1,h2,h3{text-wrap:balance}
-  p{margin:0 0 18px}
 
-  .cover{text-align:center;padding:6px 0 32px;border-bottom:3px solid #0e7c86;margin-bottom:38px}
-  .eyebrow{display:inline-block;background:#0e7c86;color:#fff;font-size:13.5px;font-weight:700;letter-spacing:0.5px;padding:7px 20px;border-radius:999px;margin-bottom:20px}
-  h1{font-size:clamp(28px,6vw,38px);font-weight:800;color:#0f2540;margin:0 0 12px}
-  .subtitle{font-size:18.5px;font-weight:600;color:#3a4256;margin:0}
-  .lede{font-size:16px;color:#5c6478;max-width:540px;margin:16px auto 0}
+  .hero{text-align:center;margin-bottom:56px}
+  .hero-badge{display:inline-block;background:#0f2540;color:#fff;font-size:13px;font-weight:700;letter-spacing:0.5px;padding:6px 18px;border-radius:999px;margin-bottom:18px}
+  h1{font-size:clamp(26px,5.5vw,34px);font-weight:800;color:#0f2540;margin:0 0 10px;text-wrap:balance}
+  .hero p{font-size:15.5px;color:#5c6478;margin:0;max-width:460px;margin-inline:auto}
 
-  h2{font-size:23px;font-weight:800;color:#0f2540;margin:44px 0 16px}
-  h2:first-of-type{margin-top:0}
-  h2.section-break{padding-top:6px}
-  h3{font-size:18px;font-weight:800;color:#0f2540;margin:0 0 10px}
+  .group{margin-bottom:48px}
+  .group-title{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+  .group-title h2{font-size:19px;font-weight:800;margin:0;text-wrap:balance}
+  .group-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
 
-  .sheet-name{font-size:14.5px;color:#0e7c86;font-weight:700;margin:-10px 0 14px}
+  .group.system .group-title h2{color:#0f2540}
+  .group.system .group-dot{background:#0e7c86}
+  .group.sales .group-title h2{color:#0f2540}
+  .group.sales .group-dot{background:#c8622d}
 
-  ol.toc{margin:0 0 10px;padding-inline-start:26px;font-size:16px;color:#2c3348}
-  ol.toc li{margin-bottom:9px}
-
-  .legend{display:flex;gap:16px;margin-bottom:14px;flex-wrap:wrap}
-  .legend-item{flex:1;min-width:240px;display:flex;align-items:center;gap:12px;border-radius:10px;padding:14px 18px;font-size:15px}
-  .legend-btn{background:#fff8e1;border:1px solid #f0d778;color:#5a4a12}
-  .legend-manual{background:#eaf2ff;border:1px solid #b9d2f5;color:#173a66}
-  .dot{width:14px;height:14px;border-radius:4px;flex-shrink:0}
-  .dot-btn{background:#f5c344}
-  .dot-manual{background:#3f7ee8}
-
-  .flow{display:flex;flex-direction:column;gap:11px;margin-bottom:10px}
-  .flow-row{display:flex;align-items:center;gap:16px;border-radius:10px;padding:16px 20px}
-  .flow-manual{background:#eaf2ff;border:1px solid #b9d2f5}
-  .flow-btn{background:#fff8e1;border:1px solid #f0d778}
-  .flow-num{width:32px;height:32px;border-radius:50%;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-  .flow-manual .flow-num{background:#3f7ee8;color:#fff}
-  .flow-btn .flow-num{background:#f5c344;color:#4a3a06}
-  .flow-title{font-weight:700;font-size:16px}
-  .flow-manual .flow-title{color:#173a66}
-  .flow-btn .flow-title{color:#5a4a12}
-  .flow-sub{font-size:13.5px;margin-top:3px}
-  .flow-manual .flow-sub{color:#3a577e}
-  .flow-btn .flow-sub{color:#7a6420}
-  .flow-note{font-size:14px;color:#8b93a6;margin:14px 0 0}
-
-  .table-wrap{overflow-x:auto;margin-bottom:26px;border-radius:8px;border:1px solid #dde1ea}
-  table{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
-  th{text-align:right;background:#0f2540;color:#fff;padding:12px 16px;white-space:nowrap;font-weight:700}
-  td{padding:12px 16px;border-top:1px solid #dde1ea}
-  td:first-child{font-weight:700;white-space:nowrap}
-  tr:nth-child(even) td{background:#f7f8fb}
-
-  .callout{border-radius:10px;padding:16px 20px;font-size:15px;margin-bottom:20px;line-height:1.8}
-  .callout strong{font-weight:800}
-  .callout-danger{background:#fdeceb;border:1px solid #f2c2be;color:#7a2620}
-  .callout-info{background:#f3f6fb;border:1px solid #d7dfec;color:#2c3348}
-
-  .btn-tag{background:#fff8e1;border:1px solid #f0d778;border-radius:10px;padding:16px 20px;font-size:16px;color:#5a4a12;font-weight:700;margin-bottom:18px}
-
-  ul.steps,ol.steps{font-size:16px;color:#2c3348;margin:0 0 20px;padding-inline-start:26px}
-  ul.steps li,ol.steps li{margin-bottom:9px}
-
-  .split{display:flex;gap:18px;margin-bottom:18px;flex-wrap:wrap}
-  .split-card{flex:1;min-width:240px;border-radius:10px;padding:16px 20px}
-  .split-ok{background:#eafaf0;border:1px solid #b9e6c9}
-  .split-bad{background:#fdeceb;border:1px solid #f2c2be}
-  .split-title{font-weight:800;font-size:15px;margin-bottom:10px}
-  .split-ok .split-title{color:#1e6e46}
-  .split-bad .split-title{color:#7a2620}
-  .split-card ul{margin:0;padding-inline-start:22px;font-size:15px}
-  .split-ok ul{color:#245c3d}
-  .split-bad ul{color:#7a2620}
-  .split-card li{margin-bottom:4px}
-
-  .color-key{display:inline-flex;align-items:center;gap:9px}
-  .swatch{width:13px;height:13px;border-radius:3px;display:inline-block;flex-shrink:0}
-
-  footer{font-size:13px;color:#8b93a6;text-align:center;border-top:1px solid #e5e8ef;padding-top:18px;margin-top:20px}
-
-  .next-part{
-    display:flex;align-items:center;justify-content:space-between;gap:18px;
-    background:#0e7c86;
+  .cards{display:flex;flex-direction:column;gap:14px}
+  .card{
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    background:#fff;
+    border:1px solid #e5e8ef;
     border-radius:14px;
-    padding:26px 30px;
-    margin-top:48px;
+    padding:20px 24px;
     text-decoration:none;
-    box-shadow:0 6px 18px rgba(14,124,134,0.25);
-    transition:transform .15s ease, box-shadow .15s ease;
+    box-shadow:0 1px 2px rgba(15,37,64,0.03);
+    transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+    border-inline-start:4px solid transparent;
   }
-  .next-part:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(14,124,134,0.32)}
-  .next-part-text{color:#fff}
-  .next-part-eyebrow{display:block;font-size:13px;font-weight:700;letter-spacing:0.5px;color:#bfe9ec;margin-bottom:6px}
-  .next-part-title{font-size:20px;font-weight:800;margin:0 0 6px;text-wrap:balance}
-  .next-part-desc{font-size:14.5px;color:#e3f4f5;margin:0}
-  .next-part-arrow{font-size:26px;color:#fff;flex-shrink:0;line-height:1}
-  @media (max-width:520px){
-    .next-part{flex-direction:column;align-items:stretch;text-align:center;gap:10px}
-  }
+  .group.system .card{border-inline-start-color:#0e7c86}
+  .group.sales .card{border-inline-start-color:#c8622d}
+  .card:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(15,37,64,0.08)}
 
-  @media (max-width:520px){
-    .split,.legend{flex-direction:column}
-    .doc{font-size:16px}
+  .card-text{color:#232a3d}
+  .card-eyebrow{display:block;font-size:12.5px;font-weight:700;letter-spacing:0.3px;margin-bottom:5px}
+  .group.system .card-eyebrow{color:#0e7c86}
+  .group.sales .card-eyebrow{color:#c8622d}
+  .card-title{font-size:17px;font-weight:800;margin:0 0 4px;color:#0f2540}
+  .card-desc{font-size:13.5px;color:#6b7284;margin:0}
+  .card-arrow{font-size:22px;color:#b7bccb;flex-shrink:0}
+
+  footer{font-size:13px;color:#8b93a6;text-align:center;border-top:1px solid #e5e8ef;padding-top:18px;margin-top:12px}
+
+  @media (max-width:480px){
+    .card{padding:16px 18px}
   }
 </style>
 </head>
 <body>
-<div class="doc">
+<div class="wrap">
 
-  <div class="cover">
-    <div class="eyebrow">الجزء الأول</div>
-    <h1>دليل استخدام نظام إدارة الحصص</h1>
-    <p class="subtitle">دورة العمل الأساسية على شيتات الجدولة</p>
-    <p class="lede">من تسجيل الطالب والمدرس، إلى توليد الجدول تلقائيًا، ثم نقل الحصص بعد انعقادها، وحساب مدتها الفعلية.</p>
+  <div class="hero">
+    <div class="hero-badge">فهرس الأدلة</div>
+    <h1>أدلة الاستخدام</h1>
+    <p>اختر الدليل الذي تريد الاطلاع عليه.</p>
   </div>
 
-  <h2>محتويات هذا الدليل</h2>
-  <ol class="toc">
-    <li>نظرة عامة على دورة العمل</li>
-    <li>الخطوة 1 — تسجيل بيانات الطالب</li>
-    <li>الخطوة 2 — تسجيل مواعيد الطالب المتاحة</li>
-    <li>الخطوة 3 — تحويل مواعيد الطالب إلى التوقيت العالمي UTC (زر)</li>
-    <li>الخطوة 4 — تسجيل بيانات المدرس</li>
-    <li>الخطوة 5 — تسجيل مواعيد المدرس المتاحة</li>
-    <li>الخطوة 6 — توليد جدول الحصص (زر «اختيار نوع الجدولة»)</li>
-    <li>الخطوة 7 — تحديث حالة الحصة بعد انعقادها</li>
-    <li>الخطوة 8 — نقل الحصص حسب الحالة (زر)</li>
-    <li>الخطوة 9 — حساب مدة الحصة المكتملة (زر)</li>
-    <li>ملاحظات وتنبيهات عامة</li>
-  </ol>
-
-  <h2>نظرة عامة على دورة العمل</h2>
-  <p>هذا الدليل يشرح <strong>دورة العمل الأساسية</strong> لنظام الجدولة، بترتيب الخطوات كما تحدث فعليًا على أرض الواقع: من تسجيل الطالب والمدرس وأوقاتهم، إلى توليد الجدول تلقائيًا، ثم متابعة الحصص بعد انعقادها.</p>
-
-  <div class="legend">
-    <div class="legend-item legend-btn"><span class="dot dot-btn"></span><span>خطوة تتم بالضغط على <strong>زر</strong> داخل الشيت</span></div>
-    <div class="legend-item legend-manual"><span class="dot dot-manual"></span><span>خطوة <strong>إدخال بيانات يدوي</strong></span></div>
-  </div>
-
-  <div class="flow">
-    <div class="flow-row flow-manual"><div class="flow-num">1</div><div><div class="flow-title">تسجيل بيانات الطالب</div><div class="flow-sub">شيت Students</div></div></div>
-    <div class="flow-row flow-manual"><div class="flow-num">2</div><div><div class="flow-title">تسجيل مواعيد الطالب المتاحة</div><div class="flow-sub">شيت Student_Availability</div></div></div>
-    <div class="flow-row flow-btn"><div class="flow-num">3</div><div><div class="flow-title">الضغط على زر «تحويل الأوقات إلى UTC»</div><div class="flow-sub">يحوّل Preferred_Hours لكل طالب إلى عمود World_Time بتوقيت UTC</div></div></div>
-    <div class="flow-row flow-manual"><div class="flow-num">4</div><div><div class="flow-title">تسجيل بيانات المدرس</div><div class="flow-sub">شيت Teachers</div></div></div>
-    <div class="flow-row flow-manual"><div class="flow-num">5</div><div><div class="flow-title">تسجيل مواعيد المدرس المتاحة</div><div class="flow-sub">شيت Teacher_Availability</div></div></div>
-    <div class="flow-row flow-btn"><div class="flow-num">6</div><div><div class="flow-title">الضغط على زر «اختيار نوع الجدولة»</div><div class="flow-sub">النظام يُولّد الحصص تلقائيًا داخل شيت Lessons_Schedule</div></div></div>
-    <div class="flow-row flow-manual"><div class="flow-num">7</div><div><div class="flow-title">بعد انعقاد الحصة فعليًا</div><div class="flow-sub">تحديث عمود Status يدويًا في Lessons_Schedule</div></div></div>
-    <div class="flow-row flow-btn"><div class="flow-num">8</div><div><div class="flow-title">الضغط على زر «نقل الحصص حسب الحالة»</div><div class="flow-sub">تُنقل الحصص تلقائيًا إلى شيت completed أو شيت cancelled</div></div></div>
-    <div class="flow-row flow-btn"><div class="flow-num">9</div><div><div class="flow-title">الضغط على زر «حساب مدة الحصص»</div><div class="flow-sub">يُحسب عمود Duration_Hours لكل صف في شيت completed</div></div></div>
-  </div>
-  <p class="flow-note">خطوة تنفيذ برز داخل الشيت = إدخال بيانات (يدوي)</p>
-
-  <h2 class="section-break">الخطوة 1 — تسجيل بيانات الطالب</h2>
-  <p class="sheet-name">شيت Students</p>
-  <p>هذا هو أول شيت يتم تعبئته عند انضمام أي طالب جديد للنظام. كل صف يمثل طالبًا واحدًا.</p>
-  <div class="table-wrap"><table>
-    <thead><tr><th>العمود</th><th>الوصف</th></tr></thead>
-    <tbody>
-      <tr><td>Student_ID</td><td>رقم تعريف فريد للطالب (لا يتكرر أبدًا لطالب آخر)</td></tr>
-      <tr><td>Student_Name</td><td>اسم الطالب</td></tr>
-      <tr><td>Parent_ID / Parent_Name / Parent_Phone</td><td>بيانات ولي الأمر المرتبط بالطالب</td></tr>
-      <tr><td>Stage</td><td>الصف الدراسي (1 إلى 12)</td></tr>
-      <tr><td>Country / City</td><td>الدولة والمدينة</td></tr>
-      <tr><td>Timezone</td><td>المنطقة الزمنية للطالب (مهم جدًا للجدولة التلقائية)</td></tr>
-      <tr><td>Max_Lessons_Day / Week / Month</td><td>الحد الأقصى لعدد الحصص المسموح بجدولتها للطالب يوميًا / أسبوعيًا / شهريًا</td></tr>
-      <tr><td>Subject1…5 / Lesson_Duration1…5</td><td>كل المواد التي يدرسها الطالب (حتى 5 مواد)، ومدة كل حصة بالساعات لكل مادة</td></tr>
-      <tr><td>Status</td><td>حالة الطالب الحالية — أهم القيم: Active (نشط ويُجدوَل له تلقائيًا)، Drop / Suspended / Trail (لا يُجدوَل له)</td></tr>
-      <tr><td>Date_Of_Active / Date_Of_Drop</td><td>تاريخ التفعيل وتاريخ الانسحاب (إن وجد)</td></tr>
-      <tr><td>comment</td><td>أي ملاحظة إدارية حرة عن الطالب</td></tr>
-      <tr><td>currency</td><td>عملة الطالب المالية</td></tr>
-      <tr><td>Financial_Note</td><td>ملاحظة مالية حرة عن الطالب (تظهر مجمّعة لاحقًا في عمود Comment بتقرير Financial_Report — الجزء الثاني)</td></tr>
-      <tr><td>Email</td><td>البريد الإلكتروني (إن وجد)</td></tr>
-    </tbody>
-  </table></div>
-  <div class="callout callout-danger"><strong>مهم:</strong> النظام لا يُجدوِل أي حصص لطالب طالما حالته (Status) ليست Active. تأكد من تحديث هذا العمود فور تغيّر حالة الطالب.</div>
-
-  <h2>الخطوة 2 — تسجيل مواعيد الطالب المتاحة</h2>
-  <p class="sheet-name">شيت Student_Availability</p>
-  <p>بعد تسجيل الطالب، يتم تسجيل الأوقات التي يفضّل أو يستطيع أخذ الحصص فيها، بتوقيته المحلي هو.</p>
-  <div class="table-wrap"><table>
-    <thead><tr><th>العمود</th><th>الوصف</th></tr></thead>
-    <tbody>
-      <tr><td>Student_ID / Student_Name</td><td>ربط الصف بالطالب</td></tr>
-      <tr><td>Day</td><td>اليوم (مثال: MONDAY)</td></tr>
-      <tr><td>Preferred_Hours</td><td>الأوقات المتاحة لهذا اليوم (يمكن كتابة أكثر من وقت مفصول بفاصلة)، بتوقيت الطالب المحلي</td></tr>
-      <tr><td>Pref_Teacher</td><td>اختياري — إذا كان الطالب يفضّل مدرسًا معينًا في هذا اليوم تحديدًا</td></tr>
-      <tr><td>Teacher Name / Note</td><td>حقول توضيحية إضافية</td></tr>
-      <tr><td>Canda_Time / World_Time</td><td>مرجع مساعد لعرض التوقيت بصيغ مختلفة</td></tr>
-    </tbody>
-  </table></div>
-  <div class="callout callout-info"><strong>ملاحظة:</strong> يمكن تسجيل أكثر من صف لنفس الطالب لتغطية أيام متعددة في الأسبوع — كل صف يمثّل يومًا واحدًا فقط.</div>
-
-  <h2 class="section-break">الخطوة 3 — تحويل مواعيد الطالب إلى التوقيت العالمي (UTC)</h2>
-  <p>بعد تسجيل الأوقات المفضّلة لكل طالب (بتوقيته المحلي)، تُستخدم هذه الخطوة لحساب نفس الأوقات بتوقيت UTC، لتسهيل مراجعتها والمقارنة بينها بغضّ النظر عن منطقة كل طالب.</p>
-  <div class="btn-tag">الزر: «تحويل الأوقات إلى UTC»</div>
-  <p>عند تشغيله، يقوم تلقائيًا بما يلي لكل صف في شيت Student_Availability:</p>
-  <ul class="steps">
-    <li>يقرأ Student_ID والوقت المفضّل (Preferred_Hours) من شيت Student_Availability.</li>
-    <li>يبحث عن Timezone الطالب في شيت Students عبر Student_ID.</li>
-    <li>يحوّل الوقت المحلي للطالب إلى التوقيت العالمي (UTC) مع مراعاة فرق التوقيت الصحيح لتاريخ اليوم (بما فيه التوقيت الصيفي إن وُجد).</li>
-    <li>يكتب الناتج في عمود World_Time بصيغة الساعة والدقيقة متبوعة بـ UTC (مثال: 14:30 UTC).</li>
-    <li>يكتب كل النتائج دفعة واحدة في نهاية العملية، لتبقى سريعة حتى مع عدد كبير من الصفوف.</li>
-  </ul>
-  <div class="callout callout-info">
-    <strong>رسائل تظهر بدل الوقت عند وجود مشكلة في صف معيّن:</strong>
-    <ul style="margin:10px 0 0;padding-inline-start:22px">
-      <li><strong>لا يوجد بيانات للطالب</strong> — Student_ID في Student_Availability غير موجود في شيت Students.</li>
-      <li><strong>لا يوجد توقيت للطالب</strong> — خانة Timezone فارغة لهذا الطالب في شيت Students.</li>
-      <li><strong>صيغة وقت الطالب بها مشكلة</strong> — قيمة Preferred_Hours ليست بصيغة ساعة:دقيقة صحيحة.</li>
-    </ul>
-  </div>
-  <div class="callout callout-danger"><strong>مهم:</strong> شغّل هذا الزر بعد كل تحديث على أعمدة Preferred_Hours أو Timezone حتى يبقى عمود World_Time مطابقًا للواقع.</div>
-
-  <h2 class="section-break">الخطوة 4 — تسجيل بيانات المدرس</h2>
-  <p class="sheet-name">شيت Teachers</p>
-  <p>نفس فكرة شيت الطلاب، ولكن لكل مدرس.</p>
-  <div class="table-wrap"><table>
-    <thead><tr><th>العمود</th><th>الوصف</th></tr></thead>
-    <tbody>
-      <tr><td>Teacher_ID</td><td>رقم تعريف فريد للمدرس</td></tr>
-      <tr><td>Teacher_Name</td><td>اسم المدرس</td></tr>
-      <tr><td>Country / City</td><td>الدولة والمدينة</td></tr>
-      <tr><td>Timezone</td><td>المنطقة الزمنية للمدرس (ضروري للمقارنة مع توقيت الطالب)</td></tr>
-      <tr><td>Teacher_Link</td><td>رابط اجتماع المدرس الثابت (Meet/Zoom) — يُنسخ تلقائيًا لكل حصة يتم جدولتها له</td></tr>
-      <tr><td>Subject1 / Subject2 / Subject3</td><td>المواد التي يُدرّسها هذا المدرس</td></tr>
-      <tr><td>NOTE</td><td>ملاحظات إدارية حرة</td></tr>
-      <tr><td>Email</td><td>البريد الإلكتروني</td></tr>
-    </tbody>
-  </table></div>
-
-  <h2>الخطوة 5 — تسجيل مواعيد المدرس المتاحة</h2>
-  <p class="sheet-name">شيت Teacher_Availability</p>
-  <p>يحدد فيه وقت توفّر كل مدرس بتوقيته المحلي هو (وليس توقيت الطالب).</p>
-  <div class="table-wrap"><table>
-    <thead><tr><th>العمود</th><th>الوصف</th></tr></thead>
-    <tbody>
-      <tr><td>Teacher_ID / Teacher_Name</td><td>ربط الصف بالمدرس</td></tr>
-      <tr><td>Day</td><td>اليوم</td></tr>
-      <tr><td>Start_Time / End_Time</td><td>بداية ونهاية فترة التوفر بتوقيت المدرس المحلي</td></tr>
-      <tr><td>Is_Available</td><td>يجب أن تكون القيمة Yes (أو نعم أو 1 أو true) حتى يعتبرها النظام فترة متاحة فعليًا</td></tr>
-      <tr><td>Note</td><td>ملاحظة حرة</td></tr>
-    </tbody>
-  </table></div>
-  <div class="callout callout-danger"><strong>مهم:</strong> إذا كانت خانة Is_Available فارغة أو أي قيمة غير القيم المذكورة أعلاه، فسيتجاهل النظام هذه الفترة تمامًا ولن يجدوِل فيها أي حصة.</div>
-
-  <h2 class="section-break">الخطوة 6 — توليد جدول الحصص</h2>
-  <p>بعد اكتمال البيانات في الشيتات الأربعة السابقة، تأتي خطوة توليد الجدول تلقائيًا.</p>
-  <div class="btn-tag">الزر: «اختيار نوع الجدولة»</div>
-  <p>عند الضغط عليه تظهر نافذة بها 3 خيارات:</p>
-  <ul class="steps">
-    <li><strong>Yes</strong> — توليد جدول كامل لمدة 30 يومًا قادمة من تاريخ اليوم.</li>
-    <li><strong>No</strong> — توليد جدول لنطاق تاريخ محدد تدخله بنفسك (تاريخ بداية وتاريخ نهاية).</li>
-    <li><strong>Cancel</strong> — إلغاء العملية دون أي تعديل.</li>
-  </ul>
-  <h3>ماذا يفعل النظام تلقائيًا؟</h3>
-  <ul class="steps">
-    <li>يقرأ أوقات كل طالب المتاحة (بتوقيته)، ويحوّلها إلى توقيت كل مدرس مرشّح لمقارنتها بأوقات توفره.</li>
-    <li>يتجنب أي تعارض في المواعيد سواء للطالب أو للمدرس.</li>
-    <li>يحترم الحدود اليومية والأسبوعية والشهرية المسجّلة في شيت الطلاب.</li>
-    <li>يضيف الحصص الجديدة فقط داخل شيت Lessons_Schedule، دون حذف أو تكرار الحصص الموجودة مسبقًا.</li>
-  </ul>
-  <h3>تقرير النتيجة</h3>
-  <p>بعد انتهاء التوليد تظهر رسالة تلخّص: عدد الطلاب الكلي، عدد الطلاب الذين حصلوا على حصص جديدة، عدد الحصص الجديدة المولّدة، وتوزيعها حسب المادة.</p>
-
-  <h3 class="section-break">ألوان تنبيه داخل شيت Lessons_Schedule</h3>
-  <div class="table-wrap"><table>
-    <thead><tr><th>اللون</th><th>المعنى</th></tr></thead>
-    <tbody>
-      <tr><td><span class="color-key"><span class="swatch" style="background:#e05a4e"></span>أحمر</span></td><td>على عمود وقت بداية المدرس — الحصة جُدولت خارج وقت توفر المدرس الرسمي وتحتاج مراجعة يدوية</td></tr>
-      <tr><td><span class="color-key"><span class="swatch" style="background:#4caf7d"></span>أخضر</span></td><td>على عمود وقت نهاية الطالب — الحصة تمتد لليوم التالي بتوقيت الطالب (تعبر منتصف الليل)</td></tr>
-      <tr><td><span class="color-key"><span class="swatch" style="background:#f5c344"></span>أصفر</span></td><td>على الصف كامل — كل مواد الطالب في هذه الدورة جدولة جزئية، لم يتم تغطيتها بالكامل</td></tr>
-      <tr><td><span class="color-key"><span class="swatch" style="background:#e05a4e"></span>صفوف حمراء في آخر الشيت</span></td><td>طلاب نشطون لم يحصلوا على أي حصة، مع سبب ذلك (لا توجد أوقات متاحة / لا يوجد مدرس مناسب)</td></tr>
-    </tbody>
-  </table></div>
-
-  <h2>الخطوة 7 — بعد انعقاد الحصة: تحديث الحالة يدويًا</h2>
-  <p>شيت Lessons_Schedule يحتوي على كل الحصص المجدولة (القادمة والسابقة). بعد أن تنعقد الحصة فعليًا (أو يتم إلغاؤها)، يجب على المستخدم تحديث عمود Status لهذا الصف يدويًا بإحدى القيم التالية، تمهيدًا لنقلها في الخطوة التالية:</p>
-  <div class="split">
-    <div class="split-card split-ok">
-      <div class="split-title">تنقل إلى شيت completed</div>
-      <ul><li>Completed</li><li>Paid_Cancelled</li><li>Trail_Done</li></ul>
-    </div>
-    <div class="split-card split-bad">
-      <div class="split-title">تنقل إلى شيت cancelled</div>
-      <ul><li>Cancelled</li><li>Trail_Canceled</li><li>Teacher_Canceled</li><li>Student_Canceled</li></ul>
+  <div class="group system">
+    <div class="group-title"><span class="group-dot"></span><h2>دليل استخدام نظام إدارة الحصص</h2></div>
+    <div class="cards">
+      <a class="card" href="part-1.html">
+        <div class="card-text">
+          <span class="card-eyebrow">الجزء الأول</span>
+          <p class="card-title">دورة العمل الأساسية</p>
+          <p class="card-desc">من تسجيل الطالب والمدرس، إلى توليد الجدول تلقائيًا، ونقل الحصص بعد انعقادها.</p>
+        </div>
+        <span class="card-arrow">‹</span>
+      </a>
+      <a class="card" href="part-2.html">
+        <div class="card-text">
+          <span class="card-eyebrow">الجزء الثاني</span>
+          <p class="card-title">التسعير عبر العروض والدفعات</p>
+          <p class="card-desc">كيف يُحسب سعر كل حصة مكتملة، وكيف تُسجَّل الدفعات ويُبنى التقرير المالي.</p>
+        </div>
+        <span class="card-arrow">‹</span>
+      </a>
     </div>
   </div>
-  <div class="callout callout-info"><strong>مهم:</strong> أي صف تبقى حالته على القيمة الافتراضية Scheduled يظل في شيت Lessons_Schedule ولا يُنقل، لأن النظام يعتبره حصة لم تنعقد بعد.</div>
 
-  <h2 class="section-break">الخطوة 8 — نقل الحصص حسب الحالة</h2>
-  <div class="btn-tag">الزر: «نقل الحصص حسب الحالة»</div>
-  <p>يُشغّل هذا الزر بعد تحديث أعمدة Status للحصص المنتهية، ويقوم بالتالي تلقائيًا:</p>
-  <ul class="steps">
-    <li>يفحص كل صف في Lessons_Schedule ويقرأ قيمة Status الخاصة به.</li>
-    <li>ينسخ الصف كاملًا إلى شيت completed أو شيت cancelled حسب الجدول في الخطوة السابقة.</li>
-    <li>يبحث عن Parent_ID الخاص بالطالب من شيت Students، ويضيفه في عمود Parent_No بشيت completed.</li>
-    <li>يحذف الصف من شيت Lessons_Schedule بعد نسخه بنجاح.</li>
-  </ul>
-  <div class="callout callout-danger"><strong>حالة خاصة — Trail_Done:</strong> عند نقل حصة تجريبية، يضع النظام تلقائيًا Final_Price = 0 ويلوّن خلية الحالة والسعر باللون الأحمر الفاتح للتنويه بأنها حصة تجريبية غير مدفوعة.</div>
-  <div class="callout callout-info"><strong>تنبيه:</strong> إذا كان الطالب بدون Parent_ID مطابق في شيت Students، فستظهر رسالة في نهاية العملية توضح عدد هذه الحالات ليتم مراجعتها يدويًا.</div>
-
-  <h2 class="section-break">الخطوة 9 — حساب مدة الحصة المكتملة</h2>
-  <div class="btn-tag">الزر: «حساب مدة الحصص (Duration_Hours)»</div>
-  <p>يعمل هذا الزر فقط على شيت completed، ويحسب عمود Duration_Hours لكل حصة:</p>
-  <ul class="steps">
-    <li>يحسب الفرق بالساعات بين Start_Time_Teacher و End_Time_Teacher.</li>
-    <li>إذا كان أحد الوقتين مفقودًا، أو كان وقت النهاية أقل من أو يساوي وقت البداية، يكتب القيمة ERROR بدل الرقم.</li>
-    <li>لا يعيد حساب أي صف له بالفعل قيمة في Duration_Hours (سواء رقم أو ERROR) لتفادي التكرار.</li>
-    <li>يُنشئ أو يحدّث شيتًا باسم Duration_Note يحتوي على سجل تفصيلي لكل عملية حساب، بالإضافة إلى ملخص عام (عدد الصفوف المعالجة، المحسوبة، المتجاهلة، والأخطاء).</li>
-  </ul>
-  <div class="callout callout-info"><strong>نصيحة:</strong> بعد كل تشغيل لهذا الزر، افتح شيت Duration_Note وراجع عدد صفوف ERROR إن وُجدت، وصحّح وقت المدرس في الصف المعني بشيت completed.</div>
-
-  <h2>ملاحظات وتنبيهات عامة</h2>
-  <ul class="steps">
-    <li>يجب اتباع ترتيب الخطوات كما ورد في هذا الدليل — كل خطوة تعتمد على اكتمال التي قبلها.</li>
-    <li>لا تُشغّل زر «نقل الحصص حسب الحالة» إلا بعد التأكد من تحديث عمود Status لكل الحصص المنتهية فعليًا.</li>
-    <li>المنطقة الزمنية (Timezone) لكل من الطالب والمدرس هي أساس نجاح عملية الجدولة التلقائية — أي خطأ فيها يؤدي لجدولة غير صحيحة.</li>
-    <li>هذا الجزء من الدليل يغطي فقط دورة العمل الأساسية (التسجيل → الجدولة → النقل → حساب المدة). الشيتات الأخرى (المدفوعات، الرواتب، العروض، التقارير المالية...) سيتم تغطيتها في أجزاء لاحقة من الدليل.</li>
-  </ul>
-
-  <a class="next-part" href="part-2.html">
-    <div class="next-part-text">
-      <span class="next-part-eyebrow">تابع الدليل — الجزء الثاني</span>
-      <p class="next-part-title">التسعير عبر العروض والدفعات المالية</p>
-      <p class="next-part-desc">كيف يُحسب سعر كل حصة مكتملة، وكيف تُسجَّل الدفعات وتُتابع أرصدة أولياء الأمور.</p>
+  <div class="group sales">
+    <div class="group-title"><span class="group-dot"></span><h2>الدليل التشغيلي لموظفي التسجيل والمبيعات</h2></div>
+    <div class="cards">
+      <a class="card" href="sales-guide.html">
+        <div class="card-text">
+          <span class="card-eyebrow">دليل الموظف</span>
+          <p class="card-title">من أول رسالة وحتى الحصة التجريبية</p>
+          <p class="card-desc">مراحل رحلة العميل الخمس، السكريبتات الجاهزة، ومعالجة الاعتراضات الشائعة.</p>
+        </div>
+        <span class="card-arrow">‹</span>
+      </a>
     </div>
-    <span class="next-part-arrow">←</span>
-  </a>
+  </div>
 
-  <footer>دليل استخدام نظام إدارة الحصص</footer>
+  <footer>أدلة استخدام ScopeArk</footer>
 
 </div>
 </body>
