@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>دليل استخدام نظام إدارة الحصص — الجزء الثاني</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html{background:#faf9f5}
+  body{
+    margin:0;
+    background:#faf9f5;
+    font-family:'Cairo',Tahoma,Arial,sans-serif;
+    color:#232a3d;
+    -webkit-text-size-adjust:100%;
+  }
+  .doc{
+    max-width:760px;
+    margin:0 auto;
+    padding:clamp(32px,7vw,76px) clamp(20px,6vw,56px) 64px;
+    direction:rtl;
+    text-align:right;
+    line-height:1.9;
+    font-size:17px;
+  }
+  h1,h2,h3{text-wrap:balance}
+  p{margin:0 0 18px}
+
+  .page-nav{display:flex;justify-content:space-between;align-items:center;font-size:14px;margin-bottom:22px}
+  .page-nav a{color:#0e7c86;font-weight:700;text-decoration:none}
+  .page-nav a:hover{text-decoration:underline}
+
+  .cover{text-align:center;padding:6px 0 32px;border-bottom:3px solid #0e7c86;margin-bottom:38px}
+  .eyebrow{display:inline-block;background:#0e7c86;color:#fff;font-size:13.5px;font-weight:700;letter-spacing:0.5px;padding:7px 20px;border-radius:999px;margin-bottom:20px}
+  h1{font-size:clamp(28px,6vw,38px);font-weight:800;color:#0f2540;margin:0 0 12px}
+  .subtitle{font-size:18.5px;font-weight:600;color:#3a4256;margin:0}
+  .lede{font-size:16px;color:#5c6478;max-width:540px;margin:16px auto 0}
+
+  h2{font-size:23px;font-weight:800;color:#0f2540;margin:44px 0 16px}
+  h2:first-of-type{margin-top:0}
+  h2.section-break{padding-top:6px}
+  h3{font-size:18px;font-weight:800;color:#0f2540;margin:0 0 10px}
+
+  .sheet-name{font-size:14.5px;color:#0e7c86;font-weight:700;margin:-10px 0 14px}
+
+  ol.toc{margin:0 0 10px;padding-inline-start:26px;font-size:16px;color:#2c3348}
+  ol.toc li{margin-bottom:9px}
+
+  .legend{display:flex;gap:16px;margin-bottom:14px;flex-wrap:wrap}
+  .legend-item{flex:1;min-width:240px;display:flex;align-items:center;gap:12px;border-radius:10px;padding:14px 18px;font-size:15px}
+  .legend-btn{background:#fff8e1;border:1px solid #f0d778;color:#5a4a12}
+  .legend-manual{background:#eaf2ff;border:1px solid #b9d2f5;color:#173a66}
+  .dot{width:14px;height:14px;border-radius:4px;flex-shrink:0}
+  .dot-btn{background:#f5c344}
+  .dot-manual{background:#3f7ee8}
+
+  .flow{display:flex;flex-direction:column;gap:11px;margin-bottom:10px}
+  .flow-row{display:flex;align-items:center;gap:16px;border-radius:10px;padding:16px 20px}
+  .flow-manual{background:#eaf2ff;border:1px solid #b9d2f5}
+  .flow-btn{background:#fff8e1;border:1px solid #f0d778}
+  .flow-num{width:32px;height:32px;border-radius:50%;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .flow-manual .flow-num{background:#3f7ee8;color:#fff}
+  .flow-btn .flow-num{background:#f5c344;color:#4a3a06}
+  .flow-title{font-weight:700;font-size:16px}
+  .flow-manual .flow-title{color:#173a66}
+  .flow-btn .flow-title{color:#5a4a12}
+  .flow-sub{font-size:13.5px;margin-top:3px}
+  .flow-manual .flow-sub{color:#3a577e}
+  .flow-btn .flow-sub{color:#7a6420}
+  .flow-note{font-size:14px;color:#8b93a6;margin:14px 0 0}
+
+  .table-wrap{overflow-x:auto;margin-bottom:26px;border-radius:8px;border:1px solid #dde1ea}
+  table{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
+  th{text-align:right;background:#0f2540;color:#fff;padding:12px 16px;white-space:nowrap;font-weight:700}
+  td{padding:12px 16px;border-top:1px solid #dde1ea}
+  td:first-child{font-weight:700;white-space:nowrap}
+  tr:nth-child(even) td{background:#f7f8fb}
+
+  .callout{border-radius:10px;padding:16px 20px;font-size:15px;margin-bottom:20px;line-height:1.8}
+  .callout strong{font-weight:800}
+  .callout-danger{background:#fdeceb;border:1px solid #f2c2be;color:#7a2620}
+  .callout-info{background:#f3f6fb;border:1px solid #d7dfec;color:#2c3348}
+  .callout ul{margin:10px 0 0;padding-inline-start:22px}
+  .callout li{margin-bottom:6px}
+
+  .btn-tag{background:#fff8e1;border:1px solid #f0d778;border-radius:10px;padding:16px 20px;font-size:16px;color:#5a4a12;font-weight:700;margin-bottom:18px}
+
+  ul.steps,ol.steps{font-size:16px;color:#2c3348;margin:0 0 20px;padding-inline-start:26px}
+  ul.steps li,ol.steps li{margin-bottom:9px}
+
+  .split{display:flex;gap:18px;margin-bottom:18px;flex-wrap:wrap}
+  .split-card{flex:1;min-width:240px;border-radius:10px;padding:16px 20px}
+  .split-ok{background:#eafaf0;border:1px solid #b9e6c9}
+  .split-bad{background:#fdeceb;border:1px solid #f2c2be}
+  .split-title{font-weight:800;font-size:15px;margin-bottom:10px}
+  .split-ok .split-title{color:#1e6e46}
+  .split-bad .split-title{color:#7a2620}
+  .split-card ul{margin:0;padding-inline-start:22px;font-size:15px}
+  .split-ok ul{color:#245c3d}
+  .split-bad ul{color:#7a2620}
+  .split-card li{margin-bottom:4px}
+
+  .color-key{display:inline-flex;align-items:center;gap:9px}
+  .swatch{width:13px;height:13px;border-radius:3px;display:inline-block;flex-shrink:0}
+
+  footer{font-size:13px;color:#8b93a6;text-align:center;border-top:1px solid #e5e8ef;padding-top:18px;margin-top:44px}
+
+  @media (max-width:520px){
+    .split,.legend{flex-direction:column}
+    .doc{font-size:16px}
+  }
+</style>
+</head>
+<body>
+<div class="doc">
+
+  <div class="page-nav"><a href="index.html">← الجزء الأول: دورة العمل الأساسية</a><span></span></div>
+
+  <div class="cover">
+    <div class="eyebrow">الجزء الثاني</div>
+    <h1>دليل استخدام نظام إدارة الحصص</h1>
+    <p class="subtitle">التسعير عبر العروض والدفعات المالية</p>
+    <p class="lede">كيف يُحسب سعر كل حصة مكتملة اعتمادًا على سعر المادة، والعروض المسبقة الدفع، وخصم العائلة، وكيف تُسجَّل الدفعات وتُتابع أرصدة أولياء الأمور.</p>
+  </div>
+
+  <h2>محتويات هذا الجزء</h2>
+  <ol class="toc">
+    <li>نظرة عامة على نظام التسعير</li>
+    <li>شيت Subjects — سعر الساعة لكل مادة وصف دراسي</li>
+    <li>شيت Offers — تسجيل العروض المسبقة الدفع</li>
+    <li>خصم العائلة في شيت Parents</li>
+    <li>زر «تحديث السعر النهائي» — كيف يُحسب Final_Price</li>
+    <li>شيت Payments — تسجيل الدفعات المالية</li>
+    <li>رصيد ولي الأمر في شيت Parents</li>
+    <li>ملاحظات وتنبيهات عامة</li>
+  </ol>
+
+  <h2>نظرة عامة على نظام التسعير</h2>
+  <p>بعد أن تنتقل الحصة إلى شيت completed (كما شرحنا في الجزء الأول)، تبقى بلا سعر حتى تُشغَّل عملية التسعير. هذا الجزء يشرح مصدر السعر: سعر أساسي لكل مادة وصف دراسي، عروض مسبقة الدفع تُستهلك بالساعات، وخصم عام لكل عائلة — ثم كيف تُسجَّل الدفعات الفعلية وتُقارَن بقيمة الحصص لمعرفة رصيد كل عائلة.</p>
+
+  <div class="flow">
+    <div class="flow-row flow-manual"><div class="flow-num">1</div><div><div class="flow-title">تسجيل سعر الساعة لكل مادة</div><div class="flow-sub">شيت Subjects</div></div></div>
+    <div class="flow-row flow-manual"><div class="flow-num">2</div><div><div class="flow-title">تسجيل العروض المسبقة الدفع (اختياري)</div><div class="flow-sub">شيت Offers</div></div></div>
+    <div class="flow-row flow-manual"><div class="flow-num">3</div><div><div class="flow-title">تسجيل نسبة خصم العائلة (اختياري)</div><div class="flow-sub">عمود Discount_Percent في شيت Parents</div></div></div>
+    <div class="flow-row flow-btn"><div class="flow-num">4</div><div><div class="flow-title">الضغط على زر «تحديث السعر النهائي»</div><div class="flow-sub">يحسب Final_Price لكل حصة جديدة في شيت completed</div></div></div>
+    <div class="flow-row flow-manual"><div class="flow-num">5</div><div><div class="flow-title">تسجيل كل دفعة مالية تصل من ولي الأمر</div><div class="flow-sub">شيت Payments</div></div></div>
+    <div class="flow-row flow-manual"><div class="flow-num">6</div><div><div class="flow-title">مراجعة رصيد العائلة</div><div class="flow-sub">شيت Parents</div></div></div>
+  </div>
+  <p class="flow-note">خطوة تنفيذ برز داخل الشيت = إدخال بيانات (يدوي)</p>
+
+  <h2 class="section-break">شيت Subjects — سعر الساعة لكل مادة وصف دراسي</h2>
+  <p>هذا الشيت هو مصدر <strong>السعر الأساسي</strong> لكل مادة. السعر مُسجَّل بالساعة الواحدة، وليس بالحصة، ويختلف باختلاف الصف الدراسي للطالب.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>العمود</th><th>الوصف</th></tr></thead>
+    <tbody>
+      <tr><td>Subject_Name</td><td>اسم المادة، ويجب أن يطابق حرفيًا ما يُكتب في عمود Subject بالشيتات الأخرى (Students، completed، Offers)</td></tr>
+      <tr><td>Price_Per_G1 … Price_Per_G12</td><td>سعر الساعة الواحدة لهذه المادة لكل صف دراسي من 1 إلى 12</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout callout-info"><strong>ملاحظة:</strong> إذا كان صف الطالب أكبر من 12 أو لم يوجد سعر لصفّه تحديدًا، يستخدم النظام سعر Price_Per_G12 كبديل احتياطي، ويسجّل ذلك كتحذير في Price_Note.</div>
+  <div class="callout callout-danger"><strong>مهم:</strong> إذا لم توجد المادة أصلًا في هذا الشيت، أو لم يوجد أي سعر لها حتى G12، تصبح Final_Price لتلك الحصة = ERROR.</div>
+
+  <h2 class="section-break">شيت Offers — تسجيل العروض المسبقة الدفع</h2>
+  <p>العرض هو باقة ساعات دفعها ولي الأمر مقدّمًا بسعر خاص (أقل غالبًا من السعر الأساسي في Subjects). كل عرض صف واحد بهذه الأعمدة:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>العمود</th><th>الوصف</th></tr></thead>
+    <tbody>
+      <tr><td>Offer_ID</td><td>رقم تعريف فريد للعرض</td></tr>
+      <tr><td>Parent_ID</td><td>ولي الأمر صاحب العرض — إلزامي دائمًا</td></tr>
+      <tr><td>Student_ID</td><td>اختياري — حدّد نطاق العرض (اُنظر جدول النطاق أدناه)</td></tr>
+      <tr><td>Subject</td><td>اختياري — يجب أن يطابق اسمًا موجودًا في شيت Subjects إن كُتب</td></tr>
+      <tr><td>Total_Hours</td><td>إجمالي عدد الساعات المدفوعة مسبقًا (يُستخدم فقط عندما يكون العرض LIMITED)</td></tr>
+      <tr><td>Price_Per_Hour</td><td>سعر الساعة داخل هذا العرض — إن تُرك فارغًا يُحسب تلقائيًا (Total_Price ÷ Total_Hours) ويُكتب في الخانة</td></tr>
+      <tr><td>Total_Price</td><td>السعر الإجمالي الذي دفعه ولي الأمر مقابل هذه الباقة</td></tr>
+      <tr><td>Offer_Mode</td><td>LIMITED (افتراضي) / UNLIMITED / DISABLED — اُنظر الشرح أدناه</td></tr>
+      <tr><td>Start_Date / End_Date</td><td>نطاق تاريخ صلاحية العرض — يُطبَّق فقط عندما يكون Offer_Mode = LIMITED وتُركت إحدى الخانتين أو كلتاهما معبّأة</td></tr>
+      <tr><td>Used_Hours</td><td>يُحدَّث تلقائيًا: مجموع الساعات التي استُهلكت من هذا العرض حتى الآن</td></tr>
+      <tr><td>Last_Used_Date</td><td>يُحدَّث تلقائيًا: تاريخ آخر حصة استخدمت هذا العرض</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>أوضاع العرض (Offer_Mode)</h3>
+  <div class="split">
+    <div class="split-card split-ok">
+      <div class="split-title">LIMITED (الافتراضي إن تُرك فارغًا)</div>
+      <ul><li>يتوقف العرض عن العمل بمجرد أن يصل Used_Hours إلى Total_Hours</li><li>يُطبَّق نطاق Start_Date / End_Date إن وُجد</li></ul>
+    </div>
+    <div class="split-card split-ok">
+      <div class="split-title">UNLIMITED</div>
+      <ul><li>لا يتوقف العرض أبدًا مهما بلغت الساعات المستخدمة</li><li>يتجاهل Start_Date و End_Date تمامًا</li><li>يستمر تسجيل Used_Hours لغرض المتابعة فقط</li></ul>
+    </div>
+    <div class="split-card split-bad">
+      <div class="split-title">DISABLED / INACTIVE</div>
+      <ul><li>يتم تجاهل العرض بالكامل ولا يُستخدم في أي تسعير</li></ul>
+    </div>
+  </div>
+
+  <h3>نطاق تطبيق العرض</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>البيانات المُدخلة</th><th>نطاق العرض</th></tr></thead>
+    <tbody>
+      <tr><td>Parent_ID + Student_ID + Subject</td><td>هذه المادة فقط لهذا الطالب تحديدًا</td></tr>
+      <tr><td>Parent_ID + Student_ID (Subject فارغ)</td><td>كل مواد هذا الطالب تحديدًا</td></tr>
+      <tr><td>Parent_ID فقط (Student_ID و Subject فارغان)</td><td>كل الطلاب وكل المواد لهذه العائلة</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout callout-danger"><strong>غير مدعوم:</strong> Parent_ID + Subject مع ترك Student_ID فارغًا — هذا التركيب غير مسموح؛ يُتجاهل العرض ويُسجَّل كخطأ (ERROR) في Price_Note. اُترك Subject فارغًا إن أردت أن يشمل العرض كل الطلاب، أو حدّد Student_ID.</div>
+  <div class="callout callout-info"><strong>ترتيب الأولوية</strong> عند وجود أكثر من عرض ممكن لنفس الحصة: العرض الخاص بـ(الطالب + المادة) أولًا، ثم العرض الخاص بـ(الطالب فقط)، ثم أخيرًا العرض العام لكل العائلة.</div>
+  <div class="callout callout-danger"><strong>تكرار العروض:</strong> إن أُدخل أكثر من عرض بنفس التركيبة (Parent_ID + Student_ID + Subject + Offer_Mode)، يُعتمَد آخر صف تم إدخاله فقط، ويُسجَّل استبدال العرض الأقدم كتحذير. الأفضل تعطيل (DISABLED) أي عرض قديم بدل ترك تكرار.</div>
+
+  <h2 class="section-break">خصم العائلة في شيت Parents</h2>
+  <p>عمود <strong>Discount_Percent</strong> في شيت Parents هو نسبة خصم عامة تُطبَّق على السعر النهائي لكل حصص أبناء تلك العائلة، سواء كانت مسعّرة من عرض أو من السعر الأساسي — تُطبَّق كخطوة أخيرة بعد حساب سعر الحصة.</p>
+
+  <h2 class="section-break">زر «تحديث السعر النهائي» — كيف يُحسب Final_Price</h2>
+  <div class="btn-tag">الزر: «تحديث السعر النهائي»</div>
+  <p>يعمل هذا الزر فقط على صفوف شيت completed التي لا تحتوي على Final_Price بعد، ولكل صف يقوم بالتالي:</p>
+  <ul class="steps">
+    <li>يتحقق من صلاحية Duration_Hours و Stage و Subject — أي خلل هنا يجعل Final_Price = ERROR فورًا.</li>
+    <li>يجلب سعر الساعة الأساسي للمادة والصف من شيت Subjects.</li>
+    <li>يحدد ولي الأمر (Parent_ID) عبر Student_ID من شيت Students.</li>
+    <li>يبحث عن أفضل عرض مطابق حسب ترتيب الأولوية الموضّح في قسم Offers أعلاه.</li>
+    <li>إن كانت ساعات العرض المتبقية أقل من مدة الحصة (في العروض LIMITED فقط)، يُقسّم السعر بين ساعات مغطّاة بالعرض (Offer_Hours) وساعات بالسعر الأساسي (Base_Hours).</li>
+    <li>يجمع Offer_Amount + Base_Amount، ثم يطبّق نسبة خصم العائلة (Discount_Percent) إن وُجدت، للحصول على Final_Price.</li>
+    <li>يكتب في completed: Final_Price، Applied_Offer_ID، Offer_Hours، Base_Hours، Offer_Amount، Base_Amount.</li>
+    <li>يحدّث في شيت Offers: Used_Hours و Last_Used_Date للعرض المُستخدم.</li>
+    <li>يملأ Price_Per_Hour تلقائيًا في أي عرض تُرك فارغًا (Total_Price ÷ Total_Hours).</li>
+  </ul>
+  <div class="callout callout-danger"><strong>مهم:</strong> الزر لا يعيد حساب أي صف لديه Final_Price مسبقًا. لإعادة تسعير حصة معينة، امسح قيمة Final_Price يدويًا في ذلك الصف ثم شغّل الزر مجددًا.</div>
+  <div class="callout callout-info">
+    <strong>حالات تُنتج ERROR بدل السعر:</strong>
+    <ul>
+      <li>Duration_Hours فارغ أو صفر أو سالب</li>
+      <li>Stage فارغ أو غير رقمي</li>
+      <li>Subject فارغ، أو غير موجود في شيت Subjects</li>
+      <li>لا يوجد سعر لهذا الصف حتى Price_Per_G12</li>
+    </ul>
+  </div>
+  <p>بعد كل تشغيل، يُنشئ الزر أو يحدّث شيت <strong>Price_Note</strong> بسجل تفصيلي لكل صف (INFO / WARNING / ERROR) مع سبب واضح ومقترح للحل، بالإضافة إلى ملخص عام في أسفل الشيت (عدد الصفوف المعالجة، المسعّرة، المتجاهلة، وحالة العملية النهائية).</p>
+
+  <h2 class="section-break">شيت Payments — تسجيل الدفعات المالية</h2>
+  <p>هذا الشيت منفصل تمامًا عن حساب Final_Price — هو سجل يدوي لكل مبلغ استلمته الإدارة فعليًا من ولي الأمر.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>العمود</th><th>الوصف</th></tr></thead>
+    <tbody>
+      <tr><td>Payment_ID</td><td>رقم تعريف فريد للدفعة</td></tr>
+      <tr><td>Parent_ID</td><td>ولي الأمر الذي دفع المبلغ</td></tr>
+      <tr><td>Payment_Date</td><td>تاريخ استلام الدفعة</td></tr>
+      <tr><td>Month / Year</td><td>الشهر والسنة التي تخص بها الدفعة، لتسهيل التقارير الشهرية</td></tr>
+      <tr><td>Amount</td><td>المبلغ المستلم</td></tr>
+      <tr><td>Currency</td><td>عملة الدفعة</td></tr>
+      <tr><td>Student_Name</td><td>اسم الطالب المرتبط بالدفعة (للتوضيح فقط)</td></tr>
+      <tr><td>receve name</td><td>اسم الشخص الذي استلم المبلغ</td></tr>
+      <tr><td>comment</td><td>أي ملاحظة إضافية على الدفعة</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout callout-info"><strong>ملاحظة:</strong> تسجيل دفعة هنا لا يغيّر Final_Price لأي حصة — الدفعات وتسعير الحصص عمليتان منفصلتان، تلتقيان فقط في رصيد العائلة الظاهر بشيت Parents.</div>
+
+  <h2 class="section-break">رصيد ولي الأمر في شيت Parents</h2>
+  <p>يحتوي شيت Parents أيضًا على أعمدة تلخّص الوضع المالي لكل عائلة، مبنية على مجموع حصص completed من جهة ومجموع صفوف Payments من جهة أخرى:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>العمود</th><th>الوصف</th></tr></thead>
+    <tbody>
+      <tr><td>Total_Completed_Lessons</td><td>عدد الحصص المكتملة لكل أبناء العائلة</td></tr>
+      <tr><td>Total_Lessons_Value</td><td>مجموع Final_Price لكل تلك الحصص</td></tr>
+      <tr><td>Total_Payments</td><td>مجموع كل صفوف Payments الخاصة بهذه العائلة</td></tr>
+      <tr><td>Last_Payment_Date</td><td>تاريخ آخر دفعة مسجّلة</td></tr>
+      <tr><td>Balance</td><td>الفرق بين قيمة الحصص والمدفوعات — يوضّح إن كان على العائلة مبلغ مستحق أو لديها رصيد زائد</td></tr>
+      <tr><td>All_Payment_Dates / All_Payment_Amounts</td><td>سجل مجمّع لكل تواريخ ومبالغ الدفعات، للمراجعة السريعة دون فتح شيت Payments</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout callout-info"><strong>ملاحظة:</strong> هذه الأعمدة عرض ملخّص لما هو مسجّل فعلًا في completed و Payments — راجع دائمًا الشيتين الأصليين عند وجود أي تعارض في الرصيد.</div>
+
+  <h2>ملاحظات وتنبيهات عامة</h2>
+  <ul class="steps">
+    <li>سعر كل مادة في Subjects بالساعة وليس بالحصة، لذا فإن أي خطأ في Duration_Hours (الجزء الأول) ينعكس مباشرة على Final_Price.</li>
+    <li>افحص شيت Price_Note بعد كل تشغيل لزر «تحديث السعر النهائي» وصحّح أي صف بحالة ERROR أو WARNING.</li>
+    <li>لا تترك عرضين متطابقين (نفس Parent_ID + Student_ID + Subject + Offer_Mode) — عطّل القديم بدل تكراره.</li>
+    <li>تسجيل الدفعات في Payments مستقل عن التسعير في completed؛ الرابط بينهما فقط عبر أعمدة الرصيد في Parents.</li>
+  </ul>
+
+  <footer>دليل استخدام نظام إدارة الحصص — الجزء الثاني</footer>
+
+</div>
+</body>
+</html>
