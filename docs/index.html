@@ -123,12 +123,13 @@
     <li>نظرة عامة على دورة العمل</li>
     <li>الخطوة 1 — تسجيل بيانات الطالب</li>
     <li>الخطوة 2 — تسجيل مواعيد الطالب المتاحة</li>
-    <li>الخطوة 3 — تسجيل بيانات المدرس</li>
-    <li>الخطوة 4 — تسجيل مواعيد المدرس المتاحة</li>
-    <li>الخطوة 5 — توليد جدول الحصص (زر «اختيار نوع الجدولة»)</li>
-    <li>الخطوة 6 — تحديث حالة الحصة بعد انعقادها</li>
-    <li>الخطوة 7 — نقل الحصص حسب الحالة (زر)</li>
-    <li>الخطوة 8 — حساب مدة الحصة المكتملة (زر)</li>
+    <li>الخطوة 3 — تحويل مواعيد الطالب إلى التوقيت العالمي UTC (زر)</li>
+    <li>الخطوة 4 — تسجيل بيانات المدرس</li>
+    <li>الخطوة 5 — تسجيل مواعيد المدرس المتاحة</li>
+    <li>الخطوة 6 — توليد جدول الحصص (زر «اختيار نوع الجدولة»)</li>
+    <li>الخطوة 7 — تحديث حالة الحصة بعد انعقادها</li>
+    <li>الخطوة 8 — نقل الحصص حسب الحالة (زر)</li>
+    <li>الخطوة 9 — حساب مدة الحصة المكتملة (زر)</li>
     <li>ملاحظات وتنبيهات عامة</li>
   </ol>
 
@@ -143,12 +144,13 @@
   <div class="flow">
     <div class="flow-row flow-manual"><div class="flow-num">1</div><div><div class="flow-title">تسجيل بيانات الطالب</div><div class="flow-sub">شيت Students</div></div></div>
     <div class="flow-row flow-manual"><div class="flow-num">2</div><div><div class="flow-title">تسجيل مواعيد الطالب المتاحة</div><div class="flow-sub">شيت Student_Availability</div></div></div>
-    <div class="flow-row flow-manual"><div class="flow-num">3</div><div><div class="flow-title">تسجيل بيانات المدرس</div><div class="flow-sub">شيت Teachers</div></div></div>
-    <div class="flow-row flow-manual"><div class="flow-num">4</div><div><div class="flow-title">تسجيل مواعيد المدرس المتاحة</div><div class="flow-sub">شيت Teacher_Availability</div></div></div>
-    <div class="flow-row flow-btn"><div class="flow-num">5</div><div><div class="flow-title">الضغط على زر «اختيار نوع الجدولة»</div><div class="flow-sub">النظام يُولّد الحصص تلقائيًا داخل شيت Lessons_Schedule</div></div></div>
-    <div class="flow-row flow-manual"><div class="flow-num">6</div><div><div class="flow-title">بعد انعقاد الحصة فعليًا</div><div class="flow-sub">تحديث عمود Status يدويًا في Lessons_Schedule</div></div></div>
-    <div class="flow-row flow-btn"><div class="flow-num">7</div><div><div class="flow-title">الضغط على زر «نقل الحصص حسب الحالة»</div><div class="flow-sub">تُنقل الحصص تلقائيًا إلى شيت completed أو شيت cancelled</div></div></div>
-    <div class="flow-row flow-btn"><div class="flow-num">8</div><div><div class="flow-title">الضغط على زر «حساب مدة الحصص»</div><div class="flow-sub">يُحسب عمود Duration_Hours لكل صف في شيت completed</div></div></div>
+    <div class="flow-row flow-btn"><div class="flow-num">3</div><div><div class="flow-title">الضغط على زر «تحويل الأوقات إلى UTC»</div><div class="flow-sub">يحوّل Preferred_Hours لكل طالب إلى عمود World_Time بتوقيت UTC</div></div></div>
+    <div class="flow-row flow-manual"><div class="flow-num">4</div><div><div class="flow-title">تسجيل بيانات المدرس</div><div class="flow-sub">شيت Teachers</div></div></div>
+    <div class="flow-row flow-manual"><div class="flow-num">5</div><div><div class="flow-title">تسجيل مواعيد المدرس المتاحة</div><div class="flow-sub">شيت Teacher_Availability</div></div></div>
+    <div class="flow-row flow-btn"><div class="flow-num">6</div><div><div class="flow-title">الضغط على زر «اختيار نوع الجدولة»</div><div class="flow-sub">النظام يُولّد الحصص تلقائيًا داخل شيت Lessons_Schedule</div></div></div>
+    <div class="flow-row flow-manual"><div class="flow-num">7</div><div><div class="flow-title">بعد انعقاد الحصة فعليًا</div><div class="flow-sub">تحديث عمود Status يدويًا في Lessons_Schedule</div></div></div>
+    <div class="flow-row flow-btn"><div class="flow-num">8</div><div><div class="flow-title">الضغط على زر «نقل الحصص حسب الحالة»</div><div class="flow-sub">تُنقل الحصص تلقائيًا إلى شيت completed أو شيت cancelled</div></div></div>
+    <div class="flow-row flow-btn"><div class="flow-num">9</div><div><div class="flow-title">الضغط على زر «حساب مدة الحصص»</div><div class="flow-sub">يُحسب عمود Duration_Hours لكل صف في شيت completed</div></div></div>
   </div>
   <p class="flow-note">خطوة تنفيذ برز داخل الشيت = إدخال بيانات (يدوي)</p>
 
@@ -191,7 +193,28 @@
   </table></div>
   <div class="callout callout-info"><strong>ملاحظة:</strong> يمكن تسجيل أكثر من صف لنفس الطالب لتغطية أيام متعددة في الأسبوع — كل صف يمثّل يومًا واحدًا فقط.</div>
 
-  <h2 class="section-break">الخطوة 3 — تسجيل بيانات المدرس</h2>
+  <h2 class="section-break">الخطوة 3 — تحويل مواعيد الطالب إلى التوقيت العالمي (UTC)</h2>
+  <p>بعد تسجيل الأوقات المفضّلة لكل طالب (بتوقيته المحلي)، تُستخدم هذه الخطوة لحساب نفس الأوقات بتوقيت UTC، لتسهيل مراجعتها والمقارنة بينها بغضّ النظر عن منطقة كل طالب.</p>
+  <div class="btn-tag">الزر: «تحويل الأوقات إلى UTC»</div>
+  <p>عند تشغيله، يقوم تلقائيًا بما يلي لكل صف في شيت Student_Availability:</p>
+  <ul class="steps">
+    <li>يقرأ Student_ID والوقت المفضّل (Preferred_Hours) من شيت Student_Availability.</li>
+    <li>يبحث عن Timezone الطالب في شيت Students عبر Student_ID.</li>
+    <li>يحوّل الوقت المحلي للطالب إلى التوقيت العالمي (UTC) مع مراعاة فرق التوقيت الصحيح لتاريخ اليوم (بما فيه التوقيت الصيفي إن وُجد).</li>
+    <li>يكتب الناتج في عمود World_Time بصيغة الساعة والدقيقة متبوعة بـ UTC (مثال: 14:30 UTC).</li>
+    <li>يكتب كل النتائج دفعة واحدة في نهاية العملية، لتبقى سريعة حتى مع عدد كبير من الصفوف.</li>
+  </ul>
+  <div class="callout callout-info">
+    <strong>رسائل تظهر بدل الوقت عند وجود مشكلة في صف معيّن:</strong>
+    <ul style="margin:10px 0 0;padding-inline-start:22px">
+      <li><strong>لا يوجد بيانات للطالب</strong> — Student_ID في Student_Availability غير موجود في شيت Students.</li>
+      <li><strong>لا يوجد توقيت للطالب</strong> — خانة Timezone فارغة لهذا الطالب في شيت Students.</li>
+      <li><strong>صيغة وقت الطالب بها مشكلة</strong> — قيمة Preferred_Hours ليست بصيغة ساعة:دقيقة صحيحة.</li>
+    </ul>
+  </div>
+  <div class="callout callout-danger"><strong>مهم:</strong> شغّل هذا الزر بعد كل تحديث على أعمدة Preferred_Hours أو Timezone حتى يبقى عمود World_Time مطابقًا للواقع.</div>
+
+  <h2 class="section-break">الخطوة 4 — تسجيل بيانات المدرس</h2>
   <p class="sheet-name">شيت Teachers</p>
   <p>نفس فكرة شيت الطلاب، ولكن لكل مدرس.</p>
   <div class="table-wrap"><table>
@@ -208,7 +231,7 @@
     </tbody>
   </table></div>
 
-  <h2>الخطوة 4 — تسجيل مواعيد المدرس المتاحة</h2>
+  <h2>الخطوة 5 — تسجيل مواعيد المدرس المتاحة</h2>
   <p class="sheet-name">شيت Teacher_Availability</p>
   <p>يحدد فيه وقت توفّر كل مدرس بتوقيته المحلي هو (وليس توقيت الطالب).</p>
   <div class="table-wrap"><table>
@@ -223,7 +246,7 @@
   </table></div>
   <div class="callout callout-danger"><strong>مهم:</strong> إذا كانت خانة Is_Available فارغة أو أي قيمة غير القيم المذكورة أعلاه، فسيتجاهل النظام هذه الفترة تمامًا ولن يجدوِل فيها أي حصة.</div>
 
-  <h2 class="section-break">الخطوة 5 — توليد جدول الحصص</h2>
+  <h2 class="section-break">الخطوة 6 — توليد جدول الحصص</h2>
   <p>بعد اكتمال البيانات في الشيتات الأربعة السابقة، تأتي خطوة توليد الجدول تلقائيًا.</p>
   <div class="btn-tag">الزر: «اختيار نوع الجدولة»</div>
   <p>عند الضغط عليه تظهر نافذة بها 3 خيارات:</p>
@@ -253,7 +276,7 @@
     </tbody>
   </table></div>
 
-  <h2>الخطوة 6 — بعد انعقاد الحصة: تحديث الحالة يدويًا</h2>
+  <h2>الخطوة 7 — بعد انعقاد الحصة: تحديث الحالة يدويًا</h2>
   <p>شيت Lessons_Schedule يحتوي على كل الحصص المجدولة (القادمة والسابقة). بعد أن تنعقد الحصة فعليًا (أو يتم إلغاؤها)، يجب على المستخدم تحديث عمود Status لهذا الصف يدويًا بإحدى القيم التالية، تمهيدًا لنقلها في الخطوة التالية:</p>
   <div class="split">
     <div class="split-card split-ok">
@@ -267,7 +290,7 @@
   </div>
   <div class="callout callout-info"><strong>مهم:</strong> أي صف تبقى حالته على القيمة الافتراضية Scheduled يظل في شيت Lessons_Schedule ولا يُنقل، لأن النظام يعتبره حصة لم تنعقد بعد.</div>
 
-  <h2 class="section-break">الخطوة 7 — نقل الحصص حسب الحالة</h2>
+  <h2 class="section-break">الخطوة 8 — نقل الحصص حسب الحالة</h2>
   <div class="btn-tag">الزر: «نقل الحصص حسب الحالة»</div>
   <p>يُشغّل هذا الزر بعد تحديث أعمدة Status للحصص المنتهية، ويقوم بالتالي تلقائيًا:</p>
   <ul class="steps">
@@ -279,7 +302,7 @@
   <div class="callout callout-danger"><strong>حالة خاصة — Trail_Done:</strong> عند نقل حصة تجريبية، يضع النظام تلقائيًا Final_Price = 0 ويلوّن خلية الحالة والسعر باللون الأحمر الفاتح للتنويه بأنها حصة تجريبية غير مدفوعة.</div>
   <div class="callout callout-info"><strong>تنبيه:</strong> إذا كان الطالب بدون Parent_ID مطابق في شيت Students، فستظهر رسالة في نهاية العملية توضح عدد هذه الحالات ليتم مراجعتها يدويًا.</div>
 
-  <h2 class="section-break">الخطوة 8 — حساب مدة الحصة المكتملة</h2>
+  <h2 class="section-break">الخطوة 9 — حساب مدة الحصة المكتملة</h2>
   <div class="btn-tag">الزر: «حساب مدة الحصص (Duration_Hours)»</div>
   <p>يعمل هذا الزر فقط على شيت completed، ويحسب عمود Duration_Hours لكل حصة:</p>
   <ul class="steps">
