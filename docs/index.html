@@ -3,7 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>دليل استخدام نظام إدارة الحصص — الجزء الأول</title>
+<title>دليل استخدام نظام إدارة الحصص — الجزء الأول: دورة العمل الأساسية</title>
+<meta name="description" content="دليل استخدام نظام إدارة الحصص — الجزء الأول: دورة العمل الأساسية على شيتات الجدولة، من تسجيل الطالب والمدرس إلى توليد الجدول تلقائيًا ونقل الحصص بعد انعقادها.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:url" content="https://leonsomiri.github.io/training/">
+<meta property="og:title" content="دليل استخدام نظام إدارة الحصص — الجزء الأول: دورة العمل الأساسية">
+<meta property="og:description" content="من تسجيل الطالب والمدرس، إلى توليد الجدول تلقائيًا، ثم نقل الحصص بعد انعقادها، وحساب مدتها الفعلية.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="دليل استخدام نظام إدارة الحصص — الجزء الأول">
+<meta name="twitter:description" content="دورة العمل الأساسية على شيتات الجدولة: من تسجيل الطالب والمدرس إلى توليد الجدول تلقائيًا ونقل الحصص بعد انعقادها.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -100,10 +109,27 @@
   .color-key{display:inline-flex;align-items:center;gap:9px}
   .swatch{width:13px;height:13px;border-radius:3px;display:inline-block;flex-shrink:0}
 
-  footer{font-size:13px;color:#8b93a6;text-align:center;border-top:1px solid #e5e8ef;padding-top:18px;margin-top:44px}
-  .page-nav{text-align:center;font-size:14px;margin-top:14px}
-  .page-nav a{color:#0e7c86;font-weight:700;text-decoration:none}
-  .page-nav a:hover{text-decoration:underline}
+  footer{font-size:13px;color:#8b93a6;text-align:center;border-top:1px solid #e5e8ef;padding-top:18px;margin-top:20px}
+
+  .next-part{
+    display:flex;align-items:center;justify-content:space-between;gap:18px;
+    background:#0e7c86;
+    border-radius:14px;
+    padding:26px 30px;
+    margin-top:48px;
+    text-decoration:none;
+    box-shadow:0 6px 18px rgba(14,124,134,0.25);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .next-part:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(14,124,134,0.32)}
+  .next-part-text{color:#fff}
+  .next-part-eyebrow{display:block;font-size:13px;font-weight:700;letter-spacing:0.5px;color:#bfe9ec;margin-bottom:6px}
+  .next-part-title{font-size:20px;font-weight:800;margin:0 0 6px;text-wrap:balance}
+  .next-part-desc{font-size:14.5px;color:#e3f4f5;margin:0}
+  .next-part-arrow{font-size:26px;color:#fff;flex-shrink:0;line-height:1}
+  @media (max-width:520px){
+    .next-part{flex-direction:column;align-items:stretch;text-align:center;gap:10px}
+  }
 
   @media (max-width:520px){
     .split,.legend{flex-direction:column}
@@ -325,8 +351,16 @@
     <li>هذا الجزء من الدليل يغطي فقط دورة العمل الأساسية (التسجيل → الجدولة → النقل → حساب المدة). الشيتات الأخرى (المدفوعات، الرواتب، العروض، التقارير المالية...) سيتم تغطيتها في أجزاء لاحقة من الدليل.</li>
   </ul>
 
+  <a class="next-part" href="part-2.html">
+    <div class="next-part-text">
+      <span class="next-part-eyebrow">تابع الدليل — الجزء الثاني</span>
+      <p class="next-part-title">التسعير عبر العروض والدفعات المالية</p>
+      <p class="next-part-desc">كيف يُحسب سعر كل حصة مكتملة، وكيف تُسجَّل الدفعات وتُتابع أرصدة أولياء الأمور.</p>
+    </div>
+    <span class="next-part-arrow">←</span>
+  </a>
+
   <footer>دليل استخدام نظام إدارة الحصص</footer>
-  <div class="page-nav"><a href="part-2.html">الجزء الثاني: التسعير عبر العروض والدفعات →</a></div>
 
 </div>
 </body>
