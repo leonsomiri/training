@@ -134,7 +134,7 @@
     <li>خصم العائلة في شيت Parents</li>
     <li>زر «تحديث السعر النهائي» — كيف يُحسب Final_Price</li>
     <li>شيت Payments — تسجيل الدفعات المالية</li>
-    <li>رصيد ولي الأمر في شيت Parents</li>
+    <li>رصيد ولي الأمر في شيت Financial_Report</li>
     <li>ملاحظات وتنبيهات عامة</li>
   </ol>
 
@@ -147,7 +147,7 @@
     <div class="flow-row flow-manual"><div class="flow-num">3</div><div><div class="flow-title">تسجيل نسبة خصم العائلة (اختياري)</div><div class="flow-sub">عمود Discount_Percent في شيت Parents</div></div></div>
     <div class="flow-row flow-btn"><div class="flow-num">4</div><div><div class="flow-title">الضغط على زر «تحديث السعر النهائي»</div><div class="flow-sub">يحسب Final_Price لكل حصة جديدة في شيت completed</div></div></div>
     <div class="flow-row flow-manual"><div class="flow-num">5</div><div><div class="flow-title">تسجيل كل دفعة مالية تصل من ولي الأمر</div><div class="flow-sub">شيت Payments</div></div></div>
-    <div class="flow-row flow-manual"><div class="flow-num">6</div><div><div class="flow-title">مراجعة رصيد العائلة</div><div class="flow-sub">شيت Parents</div></div></div>
+    <div class="flow-row flow-manual"><div class="flow-num">6</div><div><div class="flow-title">مراجعة رصيد العائلة</div><div class="flow-sub">شيت Financial_Report</div></div></div>
   </div>
   <p class="flow-note">خطوة تنفيذ برز داخل الشيت = إدخال بيانات (يدوي)</p>
 
@@ -256,29 +256,35 @@
       <tr><td>comment</td><td>أي ملاحظة إضافية على الدفعة</td></tr>
     </tbody>
   </table></div>
-  <div class="callout callout-info"><strong>ملاحظة:</strong> تسجيل دفعة هنا لا يغيّر Final_Price لأي حصة — الدفعات وتسعير الحصص عمليتان منفصلتان، تلتقيان فقط في رصيد العائلة الظاهر بشيت Parents.</div>
+  <div class="callout callout-info"><strong>ملاحظة:</strong> تسجيل دفعة هنا لا يغيّر Final_Price لأي حصة — الدفعات وتسعير الحصص عمليتان منفصلتان، تلتقيان فقط في تقرير الرصيد بشيت Financial_Report.</div>
 
-  <h2 class="section-break">رصيد ولي الأمر في شيت Parents</h2>
-  <p>يحتوي شيت Parents أيضًا على أعمدة تلخّص الوضع المالي لكل عائلة، مبنية على مجموع حصص completed من جهة ومجموع صفوف Payments من جهة أخرى:</p>
+  <h2 class="section-break">رصيد ولي الأمر في شيت Financial_Report</h2>
+  <p>هذا الشيت هو تقرير مُجمَّع (وليس شيت Parents) يقارن قيمة الحصص المكتملة بكل عائلة مقابل ما دفعته فعليًا في Payments، ويُقسَّم إلى أقسام حسب العملة (مثال: قسم «العملة: CAD»، وآخر «العملة: US»...)، مع سطر «المجموع» في نهاية كل قسم.</p>
   <div class="table-wrap"><table>
     <thead><tr><th>العمود</th><th>الوصف</th></tr></thead>
     <tbody>
+      <tr><td>Parent_ID / Parent_Name</td><td>ولي الأمر</td></tr>
+      <tr><td>Children_IDs</td><td>أبناء هذه العائلة المشمولون في التقرير</td></tr>
       <tr><td>Total_Completed_Lessons</td><td>عدد الحصص المكتملة لكل أبناء العائلة</td></tr>
       <tr><td>Total_Lessons_Value</td><td>مجموع Final_Price لكل تلك الحصص</td></tr>
       <tr><td>Total_Payments</td><td>مجموع كل صفوف Payments الخاصة بهذه العائلة</td></tr>
       <tr><td>Last_Payment_Date</td><td>تاريخ آخر دفعة مسجّلة</td></tr>
-      <tr><td>Balance</td><td>الفرق بين قيمة الحصص والمدفوعات — يوضّح إن كان على العائلة مبلغ مستحق أو لديها رصيد زائد</td></tr>
+      <tr><td>Currency</td><td>عملة هذا القسم من التقرير</td></tr>
+      <tr><td>Discount_Percent</td><td>نسخة معروضة من نسبة خصم العائلة (المصدر الفعلي لها هو شيت Parents)</td></tr>
+      <tr><td>Balance</td><td>Total_Payments − Total_Lessons_Value: رقم موجب يعني أن العائلة دفعت أكثر من قيمة حصصها (رصيد لصالحها)، ورقم سالب يعني أن عليها مبلغ مستحق</td></tr>
+      <tr><td>Status</td><td>يوضّح حالة الرصيد نصيًا: دائن (رصيد لصالح العائلة) / مدين (عليها مبلغ) / متوازن (Balance = صفر)</td></tr>
       <tr><td>All_Payment_Dates / All_Payment_Amounts</td><td>سجل مجمّع لكل تواريخ ومبالغ الدفعات، للمراجعة السريعة دون فتح شيت Payments</td></tr>
+      <tr><td>Notes</td><td>ملاحظات تلقائية عن اكتمال البيانات (مثال: "لا توجد حصص مكتملة بسعر صالح ضمن الفترة")</td></tr>
     </tbody>
   </table></div>
-  <div class="callout callout-info"><strong>ملاحظة:</strong> هذه الأعمدة عرض ملخّص لما هو مسجّل فعلًا في completed و Payments — راجع دائمًا الشيتين الأصليين عند وجود أي تعارض في الرصيد.</div>
+  <div class="callout callout-info"><strong>ملاحظة:</strong> هذا الشيت تقرير عرض فقط — المصدر الحقيقي للأرقام يبقى دائمًا completed (للحصص) و Payments (للمدفوعات) و Parents (لنسبة الخصم). راجع تلك الشيتات الأصلية عند وجود أي تعارض في الرصيد.</div>
 
   <h2>ملاحظات وتنبيهات عامة</h2>
   <ul class="steps">
     <li>سعر كل مادة في Subjects بالساعة وليس بالحصة، لذا فإن أي خطأ في Duration_Hours (الجزء الأول) ينعكس مباشرة على Final_Price.</li>
     <li>افحص شيت Price_Note بعد كل تشغيل لزر «تحديث السعر النهائي» وصحّح أي صف بحالة ERROR أو WARNING.</li>
     <li>لا تترك عرضين متطابقين (نفس Parent_ID + Student_ID + Subject + Offer_Mode) — عطّل القديم بدل تكراره.</li>
-    <li>تسجيل الدفعات في Payments مستقل عن التسعير في completed؛ الرابط بينهما فقط عبر أعمدة الرصيد في Parents.</li>
+    <li>تسجيل الدفعات في Payments مستقل عن التسعير في completed؛ الرابط بينهما فقط عبر تقرير الرصيد في Financial_Report.</li>
   </ul>
 
   <footer>دليل استخدام نظام إدارة الحصص — الجزء الثاني</footer>
